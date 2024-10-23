@@ -22,7 +22,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "./node_modules/typescript/lib",
   // tailwind css 修复
   "css.customData": [".vscode/tailwind.json"],
   // 配置语言的文件关联
