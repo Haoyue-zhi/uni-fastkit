@@ -27,4 +27,9 @@ export default defineUniPages({
       },
     ],
   },
+  "easycom": {
+    "custom": {
+      "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
+    }
+  }
 })

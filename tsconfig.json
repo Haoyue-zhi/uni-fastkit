@@ -23,7 +23,9 @@
       // wx API 相关的 TypeScript 类型
       "miniprogram-api-typings",
       // nutui-uniapp 相关的 TypeScript 类型
-      "nutui-uniapp/global.d.ts"
+      "nutui-uniapp/global.d.ts",
+      // z-paging 相关的 TypeScript 类型
+      "z-paging/types"
     ]
   },
   "vueCompilerOptions": {
