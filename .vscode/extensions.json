@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "naumovs.color-highlight",
+    "vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "aykutsarac.jsoncrack-vscode",
+    "kisstkondoros.vscode-gutter-preview",
+    "usernamehw.errorlens",
+    "uni-helper.uni-helper-vscode"
+  ]
+}

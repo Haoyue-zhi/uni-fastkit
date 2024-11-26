@@ -1,0 +1,105 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // tailwind css 修复
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  // 配置语言的文件关联
+  "files.associations": {
+    "pages.json": "jsonc", // pages.json 可以写注释
+    "manifest.json": "jsonc", // manifest.json 可以写注释
+    "*.nvue": "vue"
+  },
+  // 控制相关文件嵌套展示
+  "explorer.fileNesting.expand": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb,.gitignore,.npmrc,pnpm-workspace.yaml",
+    "vite.config.ts": "tsconfig.*.json,tailwind.config.ts,tsconfig.json,",
+    "eslint.config.mjs": "eslint.config.mjs,commitlint.config.cjs,.eslintrc-auto-import.json,prettier.config.mjs,.prettierignore,.editorconfig"
+  },
+  // "prettier.enable": false,
+  // 开启自动修复
+  // "editor.formatOnSave": false,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "explicit",
+  //   "source.organizeImports": "never"
+  // },
+  // "eslint.rules.customizations": [
+  //   {
+  //     "rule": "style/*",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "format/*",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-indent",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-spacing",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-spaces",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-order",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-dangle",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*-newline",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*quotes",
+  //     "severity": "off",
+  //     "fixable": true
+  //   },
+  //   {
+  //     "rule": "*semi",
+  //     "severity": "off",
+  //     "fixable": true
+  //   }
+  // ],
+  // eslint扁平化
+  "eslint.useFlatConfig": true,
+  // "eslint.validate": [
+  //   "javascript",
+  //   "javascriptreact",
+  //   "typescript",
+  //   "typescriptreact",
+  //   "vue",
+  //   "html",
+  //   "markdown",
+  //   "json",
+  //   "jsonc",
+  //   "yaml",
+  //   "toml",
+  //   "xml",
+  //   "gql",
+  //   "graphql",
+  //   "astro",
+  //   "svelte",
+  //   "css",
+  //   "less",
+  //   "scss",
+  //   "pcss",
+  //   "postcss"
+  // ]
+}
