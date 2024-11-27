@@ -97,6 +97,7 @@
     "czg": "^1.11.0",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tailwindcss": "^3.17.5",
     "husky": "^9.1.7",
     "miniprogram-api-typings": "^4.0.2",
     "prettier": "3.3.3",

@@ -1,4 +1,5 @@
-import { resolve, join } from 'node:path'
+import { join, resolve } from 'node:path'
+import process from 'node:process'
 import { defineConfig, loadEnv } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 // uni-helper

@@ -1,33 +1,29 @@
-import uniHelper from '@uni-helper/eslint-config'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import tailwind from 'eslint-plugin-tailwindcss'
+import uniHelper from "@uni-helper/eslint-config";
+import eslintConfigPrettier from "eslint-config-prettier";
+import tailwind from "eslint-plugin-tailwindcss";
 
-export default [
-    {
-        // uniHelper 配置规则
-        uni: true,
-        vue: {
-            overrides: {
-                'vue/singleline-html-element-content-newline': 'off',
-                'vue/multiline-html-element-content-newline': 'off',
-                'vue/max-attributes-per-line': [
-                    'error',
-                    {
-                        multiline: 1,
-                        singleline: 3,
-                    },
-                ],
-            },
-        },
-        stylistic: [],
-        ignores: ['src/manifest.json', 'src/pages.json'],
+export default uniHelper(
+  {
+    uni: true,
+    uniJson: true,
+    vue: true,
+    jsx: false,
+    stylistic: false,
+    typescript: {
+      parserOptions: {
+        extraFileExtensions: [".vue", ".nvue"],
+      },
     },
-    eslintConfigPrettier,
-    {
-        settings: {
-            tailwindcss: {
-                whitelist: ['cus-[A-Za-z].*', '.*-uni'],
-            },
-        },
+    imports: false,
+    ignores: ["**/*.d.ts", "vite.config.ts"],
+  },
+  eslintConfigPrettier,
+  ...tailwind.configs["flat/recommended"],
+  {
+    settings: {
+      tailwindcss: {
+        whitelist: ["cus-[A-Za-z].*", ".*-uni"],
+      },
     },
-];
+  }
+);
