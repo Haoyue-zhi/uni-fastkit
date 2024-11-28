@@ -18,10 +18,13 @@
     "vite.config.ts": "tsconfig.*.json,tailwind.config.ts,tsconfig.json,",
     "eslint.config.mjs": "eslint.config.mjs,commitlint.config.cjs,.eslintrc-auto-import.json,prettier.config.mjs,.prettierignore,.editorconfig"
   },
+  // 配置stylelint检查的文件类型范围
+  "stylelint.validate": ["css", "scss", "vue", "nvue"], // 与package.json的scripts对应
 
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "never",
-    "source.organizeImports": "never"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never",
+    "source.fixAll.stylelint": "explicit"
   },
   
   "eslint.rules.customizations": [
