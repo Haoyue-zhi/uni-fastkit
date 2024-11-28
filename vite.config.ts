@@ -116,7 +116,7 @@ export default defineConfig(({ mode }) => {
       port: Number.parseInt(VITE_PORT),
     },
     build: {
-      // sourcemap: VITE_SHOW_SOURCEMAP === 'true', // 默认是false
+      sourcemap: state.isH5 ? VITE_SHOW_SOURCEMAP === 'true' : false, // 默认是false
       target: 'es6',
       minify: mode === 'development' ? false : 'terser',
       terserOptions: {
