@@ -6,10 +6,15 @@
 }
 </route>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Home } from '@icon-park/vue-next'
+</script>
 
 <template>
-  <view>关于</view>
+  <view>
+    关于
+    <home theme="filled" />
+  </view>
 </template>
 
 <style scoped lang="scss"></style>

@@ -82,6 +82,7 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4020920240930001",
     "@dcloudio/uni-stacktracey": "3.0.0-4020920240930001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4020920240930001",
+    "@icon-park/vue-next": "^1.4.2",
     "@types/node": "^22.10.1",
     "@types/qs": "^6.9.17",
     "@uni-helper/eslint-config": "^0.2.2",
