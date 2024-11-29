@@ -13,6 +13,12 @@ export default {
   htmlWhitespaceSensitivity: 'ignore',
   overrides: [
     {
+      files: '*.nvue',
+      options: {
+        parser: 'vue',
+      },
+    },
+    {
       files: '*.json',
       options: {
         trailingComma: 'none',
