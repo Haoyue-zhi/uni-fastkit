@@ -1,0 +1,16 @@
+root = true
+
+# 所有文件适用
+[*]
+# 字符编码
+charset = utf-8
+# 结尾换行符 (lf, cr, crlf)
+end_of_line = lf
+# 去除行首尾空格
+trim_trailing_whitespace = true
+# 在文件结尾插入新行
+insert_final_newline = true
+# 缩进风格 (space, tab)
+indent_style = space
+# 缩进大小
+indent_size = 2

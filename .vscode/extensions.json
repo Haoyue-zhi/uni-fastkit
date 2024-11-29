@@ -10,6 +10,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "yoavbls.pretty-ts-errors",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig"
   ]
 }
