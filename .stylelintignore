@@ -1,8 +1,10 @@
 .husky
 .vscode
 
+dist
 src/uni_modules/
 src/nativeplugins/
+src/uni.scss
 
 *.js
 *.cjs
