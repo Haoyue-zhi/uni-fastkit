@@ -25,4 +25,9 @@ export default uniHelper(
       },
     },
   },
-)
+).overrides({
+  'antfu/typescript/parser': { files: ['**/*.nvue'] },
+  'antfu/typescript/rules': { files: ['**/*.nvue'] },
+  'antfu/vue/rules': { files: ['**/*.nvue'] },
+  'uni-helper/vue/rules': { files: ['**/*.nvue'] },
+})
