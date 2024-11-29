@@ -45,7 +45,7 @@
     "cz:add": "git pull && git add . && czg && git push",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:style": "stylelint \"**/*.{vue,nvue,scss,css}\" --fix",
+    "lint:style": "stylelint \"**/*.{vue,nvue,scss,css}\"",
     "prepare": "husky"
   },
   "dependencies": {
