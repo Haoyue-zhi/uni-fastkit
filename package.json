@@ -43,7 +43,9 @@
     "type-check": "vue-tsc --noEmit",
     "cz": "git pull && czg && git push",
     "cz:add": "git pull && git add . && czg && git push",
-    "lint:lint-staged": "lint-staged",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:style": "stylelint \"**/*.{vue,nvue,scss,css}\" --fix",
     "prepare": "husky"
   },
   "dependencies": {
