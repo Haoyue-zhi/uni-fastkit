@@ -6,14 +6,10 @@
 }
 </route>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <view>关于</view>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

@@ -1,14 +1,14 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('auth', () => {
-    const token = ref('')
+  const token = ref('')
 
-    function setToken(newToken: string) {
-        token.value = newToken
-    }
+  function setToken(newToken: string) {
+    token.value = newToken
+  }
 
-    return {
-        token,
-        setToken,
-    }
+  return {
+    token,
+    setToken,
+  }
 })

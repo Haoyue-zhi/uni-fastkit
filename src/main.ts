@@ -6,14 +6,16 @@ import App from './App.vue'
 export function createApp() {
   const app = createSSRApp(App)
 
-  app.use(Pinia.createPinia().use(
-    createPersistedState({
-      storage: {
-        getItem: uni.getStorageSync,
-        setItem: uni.setStorageSync,
-      },
-    }),
-  ))
+  app.use(
+    Pinia.createPinia().use(
+      createPersistedState({
+        storage: {
+          getItem: uni.getStorageSync,
+          setItem: uni.setStorageSync,
+        },
+      }),
+    ),
+  )
 
   return {
     app,

@@ -6,8 +6,8 @@ export default defineUniPages({
   globalStyle: {
     navigationBarTextStyle: 'black',
     navigationBarTitleText: '@uni-helper',
-    navigationBarBackgroundColor: "#F8F8F8",
-    backgroundColor: "#F8F8F8"
+    navigationBarBackgroundColor: '#F8F8F8',
+    backgroundColor: '#F8F8F8',
   },
   tabBar: {
     backgroundColor: '#ffffff',
@@ -27,9 +27,10 @@ export default defineUniPages({
       },
     ],
   },
-  "easycom": {
-    "custom": {
-      "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
-    }
-  }
+  easycom: {
+    custom: {
+      '^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)':
+        'z-paging/components/z-paging$1/z-paging$1.vue',
+    },
+  },
 })

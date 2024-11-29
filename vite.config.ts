@@ -1,9 +1,9 @@
 import { join, resolve } from 'node:path'
 import process from 'node:process'
-import { defineConfig, loadEnv } from "vite";
-import uni from "@dcloudio/vite-plugin-uni";
+import { defineConfig, loadEnv } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
 // uni-helper
-import { NutResolver } from "nutui-uniapp";
+import { NutResolver } from 'nutui-uniapp'
 import UniComponents from '@uni-helper/vite-plugin-uni-components'
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
@@ -15,7 +15,6 @@ import autoprefixer from 'autoprefixer'
 // other
 import AutoImport from 'unplugin-auto-import/vite'
 import ViteRestart from 'vite-plugin-restart'
-
 
 const uniPlugin = [
   UniComponents({
@@ -49,8 +48,8 @@ const vitePlugin = [
       {
         'nutui-uniapp/composables': [
           // 在这里添加需要自动导入的API
-          "useNotify",
-          "useToast"
+          'useNotify',
+          'useToast',
         ],
       },
     ],
@@ -59,8 +58,8 @@ const vitePlugin = [
   }),
   ViteRestart({
     // 通过这个插件，在修改vite.config.js文件则不需要重新运行也生效配置
-    restart: ['vite.config.ts']
-  })
+    restart: ['vite.config.ts'],
+  }),
 ]
 
 const postcssPlugins = [tailwindcss()]
@@ -79,7 +78,6 @@ export default defineConfig(({ mode }) => {
 
   const plugins = [...uniPlugin, ...vitePlugin, uni()]
 
-
   if (state.isMp) {
     plugins.push(UniTailwind())
   }
@@ -88,8 +86,6 @@ export default defineConfig(({ mode }) => {
     postcssPlugins.push(autoprefixer())
   }
 
-  console.log(VITE_SHOW_SOURCEMAP === 'true')
-  
   return {
     envDir: './env', // 自定义env目录
     plugins,
@@ -106,7 +102,7 @@ export default defineConfig(({ mode }) => {
         scss: {
           api: 'modern-compiler',
           additionalData: `@import "nutui-uniapp/styles/variables.scss";`,
-          silenceDeprecations: ['legacy-js-api', 'import'] // 暂时隐藏scss报错
+          silenceDeprecations: ['legacy-js-api', 'import'], // 暂时隐藏scss报错
         },
       },
     },
@@ -126,7 +122,6 @@ export default defineConfig(({ mode }) => {
           drop_debugger: true,
         },
       },
-    }
+    },
   }
 })
-
