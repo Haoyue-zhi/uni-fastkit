@@ -6,10 +6,10 @@ export default {
   singleQuote: true,
   printWidth: 100,
   tabWidth: 2,
-  useTabs: true,
+  useTabs: false,
   semi: false,
-  trailingComma: "es5",
-  endOfLine: "auto",
+  trailingComma: "all",
+  endOfLine: "lf",
   htmlWhitespaceSensitivity: "ignore",
   overrides: [
     {
