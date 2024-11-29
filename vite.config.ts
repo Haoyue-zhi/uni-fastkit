@@ -33,7 +33,6 @@ const uniPlugin = [
 ]
 
 const vitePlugin = [
-  tailwindcss(),
   AutoImport({
     include: [
       /\.[tj]s?$/, // .ts, .js
@@ -64,6 +63,8 @@ const vitePlugin = [
   })
 ]
 
+const postcssPlugins = [tailwindcss()]
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, resolve(process.cwd(), 'env'))
 
@@ -78,8 +79,6 @@ export default defineConfig(({ mode }) => {
 
   const plugins = [...uniPlugin, ...vitePlugin, uni()]
 
-  const postcssPlugins = [tailwindcss()]
-
 
   if (state.isMp) {
     plugins.push(UniTailwind())
@@ -89,6 +88,8 @@ export default defineConfig(({ mode }) => {
     postcssPlugins.push(autoprefixer())
   }
 
+  console.log(VITE_SHOW_SOURCEMAP === 'true')
+  
   return {
     envDir: './env', // 自定义env目录
     plugins,

@@ -1,6 +1,7 @@
+import { resolve } from 'node:path'
+import process from 'node:process'
 import { defineManifestConfig } from '@uni-helper/vite-plugin-uni-manifest'
 import { loadEnv } from 'vite'
-import { resolve } from 'node:path'
 
 const env = loadEnv(process.env.NODE_ENV!, resolve(process.cwd(), 'env'))
 
