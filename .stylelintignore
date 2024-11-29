@@ -1,2 +1,17 @@
+.husky
+.vscode
+
 src/uni_modules/
 src/nativeplugins/
+
+*.js
+*.cjs
+*.mjs
+*.ts
+*.cts
+*.mts
+*.d.ts
+*.json
+*.svg
+*.gif
+*.md
