@@ -1,15 +1,10 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "types": [
       // VITE 相关的 TypeScript 类型
@@ -30,9 +25,7 @@
   },
   "vueCompilerOptions": {
     // 调整 Volar（Vue 语言服务工具）解析行为，用于为 uni-app 组件提供 TypeScript 类型
-    "plugins": [
-      "@uni-helper/uni-app-types/volar-plugin"
-    ]
+    "plugins": ["@uni-helper/uni-app-types/volar-plugin"]
   },
   "include": [
     "src/**/*.ts",
@@ -40,6 +33,6 @@
     "src/**/*.vue",
     "src/**/*.nvue",
     "src/**/*.d.ts",
-    "types/**/*.d.ts",
+    "types/**/*.d.ts"
   ]
 }
