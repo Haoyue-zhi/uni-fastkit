@@ -5,6 +5,12 @@ export default {
     'stylelint-config-recommended-vue/scss',
     'stylelint-config-recess-order',
   ],
+  overrides: [
+    {
+      files: ['**/*.{vue,nvue,html}'],
+      customSyntax: 'postcss-html',
+    },
+  ],
   rules: {
     'selector-pseudo-class-no-unknown': [
       true,
