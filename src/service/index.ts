@@ -1,6 +1,13 @@
 import pkg from '@/manifest.json'
 import { useAuthStore } from '@/store'
+import {
+  MutationCache,
+  QueryCache,
+  QueryClient,
+  type VueQueryPluginOptions,
+} from '@tanstack/vue-query'
 import uniNetwork from '@uni-helper/uni-network'
+import emitter from './helper'
 
 const baseUrl = import.meta.env.VITE_BASE_URL
 
@@ -32,11 +39,34 @@ un.interceptors.request.use(
 // 响应拦截器
 un.interceptors.response.use(
   (response) => {
-    return response.data as Record<string, any>
+    const data = response.data as IUnResponse
+    return data
   },
   (error) => {
+    if (error.response.status === 401) {
+      emitter.emit('API_UNAUTH')
+    }
     return Promise.reject(error)
   },
 )
 
-export default un
+const vueQueryClient = new QueryClient({
+  queryCache: new QueryCache({
+    onError: (error) => {
+      if (uniNetwork.isCancel(error)) return
+      console.error(error)
+    },
+  }),
+  mutationCache: new MutationCache({
+    onError: (error) => {
+      if (uniNetwork.isCancel(error)) return
+      console.error(error)
+    },
+  }),
+})
+
+const vueQueryPluginOptions: VueQueryPluginOptions = {
+  queryClient: vueQueryClient,
+}
+
+export { un, vueQueryClient, vueQueryPluginOptions }
