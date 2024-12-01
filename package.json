@@ -69,7 +69,6 @@
     "nutui-uniapp": "^1.8.1",
     "pinia": "^2.2.7",
     "pinia-plugin-persistedstate": "^4.1.3",
-    "qs": "^6.13.1",
     "vue": "^3.5.13",
     "z-paging": "^2.8.3"
   },
@@ -86,7 +85,6 @@
     "@iconify-json/logos": "^1.2.3",
     "@iconify/tailwind": "^1.1.3",
     "@types/node": "^22.10.1",
-    "@types/qs": "^6.9.17",
     "@uni-helper/eslint-config": "^0.2.2",
     "@uni-helper/uni-app-types": "1.0.0-alpha.6",
     "@uni-helper/vite-plugin-uni-components": "^0.2.0",
