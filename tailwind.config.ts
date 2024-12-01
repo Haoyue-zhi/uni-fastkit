@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { addDynamicIconSelectors } from '@iconify/tailwind'
 
 export default {
   content: ['./index.html', './src/**/*.{vue,nvue,js,ts}'],
@@ -9,5 +10,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [addDynamicIconSelectors()],
 } satisfies Config

@@ -14,6 +14,10 @@ const title = import.meta.env.VITE_APP_TITLE
 <template>
   <view class="flex flex-col items-center px-4 pt-2">
     <image class="size-28" src="/static/logo.png" />
+    <view class="mt-3 flex items-center">
+      <view class="icon-[logos--vue] h-[71px] w-[106px]" />
+      <view class="icon-[logos--tailwindcss-icon] h-[54px] w-[156px]" />
+    </view>
     <view class="mt-4 text-4xl">
       {{ title }}
     </view>
