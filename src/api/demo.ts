@@ -1,4 +1,4 @@
-import { un } from '@/service'
+import un from '@/service'
 
 export function getDemo() {
   return un.get('/demo')
