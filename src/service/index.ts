@@ -33,7 +33,10 @@ un.interceptors.request.use(
 // 响应拦截器
 un.interceptors.response.use(
   (response) => {
-    return response
+    if (!response.data) {
+      return Promise.reject(new Error('响应数据为空'))
+    }
+    return response.data as any
   },
   (error) => {
     if (error.response.status === 401) {
