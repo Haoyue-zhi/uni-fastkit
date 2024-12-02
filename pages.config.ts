@@ -5,7 +5,7 @@ export default defineUniPages({
   pages: [],
   globalStyle: {
     navigationBarTextStyle: 'black',
-    navigationBarTitleText: '@uni-helper',
+    navigationBarTitleText: 'uni-fastkit',
     navigationBarBackgroundColor: '#F8F8F8',
     backgroundColor: '#F8F8F8',
   },

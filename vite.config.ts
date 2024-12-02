@@ -25,6 +25,7 @@ const uniPlugin = [
   UniLayouts(),
   UniPages({
     dts: 'types/uni-pages.d.ts',
+    subPackages: ['src/pages-sub'],
     minify: true,
     routeBlockLang: 'json5',
   }),
