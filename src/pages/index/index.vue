@@ -1,7 +1,6 @@
 <route lang="json5" type="home">
 {
   style: {
-    navigationStyle: 'custom',
     navigationBarTitleText: '首页',
   },
 }
@@ -9,6 +8,12 @@
 
 <script setup lang="ts">
 const title = import.meta.env.VITE_APP_TITLE
+
+const toDemo = () => {
+  uni.navigateTo({
+    url: '/pages-sub/demo/index',
+  })
+}
 </script>
 
 <template>
@@ -22,7 +27,7 @@ const title = import.meta.env.VITE_APP_TITLE
       {{ title }}
     </view>
     <view class="mt-4">
-      <nut-button type="primary">✋你好</nut-button>
+      <nut-button type="primary" @click="toDemo">✋你好</nut-button>
     </view>
   </view>
 </template>
