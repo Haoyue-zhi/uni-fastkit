@@ -1,5 +1,5 @@
 import pkg from '@/manifest.json'
-import { useAuthStore } from '@/store/auth'
+import { useAuthStore } from '@/store'
 import uniNetwork from '@uni-helper/uni-network'
 import emitter from './helper'
 
