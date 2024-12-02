@@ -1,17 +1,24 @@
+const ensureDecodeURIComponent = (url: string) => {
+  if (url.startsWith('%')) {
+    return ensureDecodeURIComponent(decodeURIComponent(url))
+  }
+  return url
+}
+
 // 解析 path
 export function parseUrl(fullPath: string) {
   const [path, queryStr] = fullPath.split('?')
   const name = path.slice(path.lastIndexOf('/') + 1)
-  const query: { [key: string]: unknown } = {}
-  queryStr
-    ?.split('&')
-    .map((i) => i.split('='))
-    .forEach((i) => (query[i[0]] = i[1]))
-  return {
-    name,
-    path,
-    query,
+  const query: Record<string, string> = {}
+
+  if (queryStr) {
+    queryStr.split('&').forEach((item) => {
+      const [key, value] = item.split('=')
+      query[key] = ensureDecodeURIComponent(value)
+    })
   }
+
+  return { name, path, query }
 }
 
 // 还原url
