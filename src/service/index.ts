@@ -1,28 +1,51 @@
 import pkg from '@/manifest.json'
 import { useAuthStore } from '@/store'
+import AdapterUniapp from '@alova/adapter-uniapp'
 import uniNetwork from '@uni-helper/uni-network'
+import { createAlova } from 'alova'
 import emitter from './helper'
 
 const baseUrl = import.meta.env.VITE_BASE_URL
+const commonHeaders = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json; charset=utf-8',
+  'X-Version': `${pkg.name}/${pkg.versionCode}`,
+}
+
+const alovaInst = createAlova({
+  baseURL: baseUrl,
+  timeout: 1000 * 3,
+  ...AdapterUniapp(),
+  async beforeRequest(method) {
+    const authStore = useAuthStore()
+    method.config.headers = {
+      ...method.config.headers,
+      Authorization: `Bearer ${authStore.token}`,
+      ...commonHeaders,
+    }
+  },
+  responded: {
+    async onSuccess(response: any) {
+      return response
+    },
+
+    async onError(err) {
+      throw err
+    },
+  },
+})
 
 const un = uniNetwork.create({
   baseUrl,
   timeout: 1000 * 3,
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json; charset=utf-8',
-    'X-Version': `${pkg.name}/${pkg.versionCode}`,
-  },
+  headers: commonHeaders,
 })
 
 // 请求拦截器
 un.interceptors.request.use(
   (config) => {
     const authStore = useAuthStore()
-    config.headers = {
-      Authorization: `Bearer ${authStore.token}`,
-      ...config.headers,
-    }
+    config.headers!.Authorization = `Bearer ${authStore.token}`
     return config
   },
   (error) => {
@@ -46,4 +69,4 @@ un.interceptors.response.use(
   },
 )
 
-export default un
+export { alovaInst as alova, un }
