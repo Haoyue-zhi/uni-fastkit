@@ -1,6 +1,25 @@
 /// <reference types="@uni-helper/vite-plugin-uni-pages/client" />
-import { parseUrl } from '@/utils/tools'
+import { storage } from '@/utils/storage'
+import { parseUrl, restoreUrl } from '@/utils/tools'
 import { pages, subPackages } from 'virtual:uni-pages'
+
+export type GoOptions =
+  | string
+  | {
+      path: string
+      mode?: 'navigateTo' | 'redirectTo' | 'reLaunch' | 'switchTab' | 'preloadPage'
+      events?: {
+        [key: string]: (data: any) => void
+      }
+      query?: {
+        [key: string]: any
+      }
+      params?: {
+        [key: string]: any
+      }
+      isGuard?: boolean
+      [key: string]: any
+    }
 
 const routes = getRouter()
 function getRouter() {
@@ -59,11 +78,89 @@ export function useRouter() {
 
   const path = pageInfo()?.path
 
+  // 页面跳转
+  const go = (options: GoOptions) => {
+    if (typeof options == 'string') {
+      options = {
+        path: options,
+        mode: 'navigateTo',
+      }
+    }
+
+    let {
+      path,
+      mode = 'navigateTo',
+      animationType,
+      animationDuration,
+      events,
+      success,
+      fail,
+      complete,
+      query,
+      params,
+      // isGuard = true,
+    } = options || {}
+
+    if (query) {
+      path = restoreUrl(path, query)
+    }
+
+    if (params) {
+      storage.set('router-params', params)
+    }
+
+    const data = {
+      url: path,
+      animationType,
+      animationDuration,
+      events,
+      success,
+      fail,
+      complete,
+    }
+
+    const next = () => {
+      switch (mode) {
+        case 'navigateTo':
+          uni.navigateTo(data)
+          break
+
+        case 'redirectTo':
+          uni.redirectTo(data)
+          break
+
+        case 'reLaunch':
+          uni.reLaunch(data)
+          break
+
+        case 'switchTab':
+          uni.switchTab(data)
+          break
+
+        case 'preloadPage':
+          uni.preloadPage(data)
+          break
+
+        default:
+          console.error('Unknown navigation mode:', mode)
+          break
+      }
+    }
+    next()
+
+    // if (fn.beforeEach && isGuard) {
+    //   fn.beforeEach({ path, query }, next, (options: GoOptions) => go(options))
+    // } else {
+    //   next()
+    // }
+  }
+
   return {
     router,
     currentpage,
     pageInfo,
     query,
     path,
+    go,
   }
 }

@@ -22,7 +22,7 @@ export function parseUrl(fullPath: string) {
 }
 
 // 还原url
-export function restoreUrl(path: string, query: { [key: string]: unknown }) {
+export function restoreUrl(path: string, query: Record<string, unknown>) {
   let count = 0
   for (const key in query) {
     path += `${count === 0 ? '?' : '&'}${key}=${query[key]}`
