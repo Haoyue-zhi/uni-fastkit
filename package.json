@@ -51,6 +51,8 @@
     "uvm": "npx @dcloudio/uvm@latest"
   },
   "dependencies": {
+    "@alova/adapter-uniapp": "^2.0.10",
+    "@alova/shared": "^1.1.1",
     "@dcloudio/uni-app": "3.0.0-4030620241128001",
     "@dcloudio/uni-app-harmony": "3.0.0-4030620241128001",
     "@dcloudio/uni-app-plus": "3.0.0-4030620241128001",
@@ -67,6 +69,7 @@
     "@dcloudio/uni-mp-xhs": "3.0.0-4030620241128001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4030620241128001",
     "@uni-helper/uni-network": "^0.19.3",
+    "alova": "^3.2.6",
     "nutui-uniapp": "^1.8.1",
     "pinia": "^2.2.7",
     "pinia-plugin-persistedstate": "^4.1.3",
