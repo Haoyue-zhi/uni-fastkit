@@ -98,7 +98,6 @@ export function useRouter() {
       complete,
       query,
       params,
-      // isGuard = true,
     } = options || {}
 
     if (query) {
@@ -155,6 +154,32 @@ export function useRouter() {
     // }
   }
 
+  const back = (options = {}) => {
+    uni.navigateBack(options)
+  }
+
+  // 执行当前页面的某个方法
+  const callMethod = (name: string, data?: unknown) => {
+    const { $vm }: any = pageInfo()
+
+    if ($vm) {
+      if ($vm.$.exposed?.[name]) {
+        return $vm.$.exposed[name](data)
+      }
+    }
+  }
+
+  // 去登录
+  const login = (loginPath: string, options?: { reLaunch: boolean }) => {
+    const { reLaunch = false } = options || {}
+
+    go({
+      path: loginPath,
+      mode: reLaunch ? 'reLaunch' : 'navigateTo',
+      isGuard: false,
+    })
+  }
+
   return {
     router,
     currentpage,
@@ -162,5 +187,8 @@ export function useRouter() {
     query,
     path,
     go,
+    back,
+    callMethod,
+    login,
   }
 }
