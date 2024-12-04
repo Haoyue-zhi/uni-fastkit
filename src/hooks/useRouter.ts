@@ -79,7 +79,7 @@ export function useRouter() {
   const path = pageInfo()?.path
 
   // 页面跳转
-  const go = (options: GoOptions) => {
+  const push = (options: GoOptions) => {
     if (typeof options == 'string') {
       options = {
         path: options,
@@ -173,7 +173,7 @@ export function useRouter() {
   const login = (loginPath: string, options?: { reLaunch: boolean }) => {
     const { reLaunch = false } = options || {}
 
-    go({
+    push({
       path: loginPath,
       mode: reLaunch ? 'reLaunch' : 'navigateTo',
       isGuard: false,
@@ -186,7 +186,7 @@ export function useRouter() {
     pageInfo,
     query,
     path,
-    go,
+    push,
     back,
     callMethod,
     login,
