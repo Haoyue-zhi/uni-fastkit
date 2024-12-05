@@ -42,13 +42,13 @@
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
+    "uvm": "npx @dcloudio/uvm@latest",
     "type-check": "vue-tsc --noEmit",
     "cz": "git pull && czg && git push",
     "cz:add": "git pull && git add . && czg && git push",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:style": "stylelint \"**/*.{vue,nvue,scss,css}\"",
-    "uvm": "npx @dcloudio/uvm@latest"
+    "lint:style": "stylelint \"**/*.{vue,nvue,scss,css}\""
   },
   "dependencies": {
     "@alova/adapter-uniapp": "^2.0.10",
