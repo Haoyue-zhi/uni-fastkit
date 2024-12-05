@@ -76,6 +76,7 @@ export default defineConfig(({ mode }) => {
   const state = {
     isMp: UNI_PLATFORM?.startsWith('mp') ?? false,
     isH5: UNI_PLATFORM === 'h5',
+    isApp: UNI_PLATFORM === 'app',
   }
 
   const plugins = [...uniPlugin, ...vitePlugin, uni()]
@@ -115,7 +116,9 @@ export default defineConfig(({ mode }) => {
       port: Number.parseInt(VITE_PORT),
     },
     build: {
-      sourcemap: state.isH5 ? VITE_SHOW_SOURCEMAP === 'true' : false, // 默认是false
+      // App，小程序端源码调试,需要主动开启 sourcemap.默认是false
+      sourcemap:
+        state.isApp || state.isMp ? true : state.isH5 ? VITE_SHOW_SOURCEMAP === 'true' : false,
       target: 'es6',
       minify: mode === 'development' ? false : 'terser',
       terserOptions: {
