@@ -7,6 +7,7 @@ const ensureDecodeURIComponent = (url: string) => {
 
 // 解析 path
 export function parseUrl(fullPath: string) {
+  if (!fullPath) return {}
   const [path, queryStr] = fullPath.split('?')
   const name = path.slice(path.lastIndexOf('/') + 1)
   const query: Record<string, string> = {}
