@@ -19,7 +19,6 @@ types/components.d.ts
 types/uni-pages.d.ts
 
 # Editor directories and files
-.idea
 *.suo
 *.ntvs*
 *.njsproj
