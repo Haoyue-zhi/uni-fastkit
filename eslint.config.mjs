@@ -14,7 +14,7 @@ export default uniHelper(
         extraFileExtensions: ['.vue', '.nvue'],
       },
     },
-    ignores: ['**/*.d.ts', 'vite.config.ts', 'src/uni_modules/', 'src/nativeplugins/'],
+    ignores: ['**/*.d.ts', 'src/uni_modules/', 'src/nativeplugins/'],
   },
   eslintConfigPrettier,
   ...tailwind.configs['flat/recommended'],

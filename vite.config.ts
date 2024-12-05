@@ -1,3 +1,4 @@
+/* eslint-disable perfectionist/sort-imports */
 import { join, resolve } from 'node:path'
 import process from 'node:process'
 import { defineConfig, loadEnv } from 'vite'
