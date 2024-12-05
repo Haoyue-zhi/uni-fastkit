@@ -11,6 +11,7 @@
     "esbenp.prettier-vscode",
     "yoavbls.pretty-ts-errors",
     "stylelint.vscode-stylelint",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "antfu.iconify"
   ]
 }
