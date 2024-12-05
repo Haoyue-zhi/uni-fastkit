@@ -1,4 +1,4 @@
-const ensureDecodeURIComponent = (url: string) => {
+export function ensureDecodeURIComponent(url: string) {
   if (url.startsWith('%')) {
     return ensureDecodeURIComponent(decodeURIComponent(url))
   }
