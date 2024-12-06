@@ -19,7 +19,8 @@ import ViteRestart from 'vite-plugin-restart'
 
 const uniPlugin = [
   UniComponents({
-    globs: ['src/components/*.{vue, nvue}'],
+    extensions: ['vue', 'nvue'],
+    directoryAsNamespace: true,
     resolvers: [NutResolver()],
     dts: 'types/components.d.ts',
   }),
