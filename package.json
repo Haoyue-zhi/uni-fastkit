@@ -1,6 +1,6 @@
 {
   "name": "uni-fastkit",
-  "version": "0.1.0-rc",
+  "version": "0.1.1-rc",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
@@ -68,6 +68,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4030620241128001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4030620241128001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4030620241128001",
+    "@icon-park/vue-next": "^1.4.2",
     "@uni-helper/uni-network": "^0.19.3",
     "alova": "^3.2.6",
     "nutui-uniapp": "^1.8.1",
@@ -85,7 +86,6 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4030620241128001",
     "@dcloudio/uni-stacktracey": "3.0.0-4030620241128001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4030620241128001",
-    "@icon-park/vue-next": "^1.4.2",
     "@iconify-json/logos": "^1.2.3",
     "@iconify/tailwind": "^1.1.3",
     "@types/node": "^22.10.1",

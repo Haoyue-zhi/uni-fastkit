@@ -7,6 +7,7 @@
 </route>
 
 <script setup lang="ts">
+// import { IconPark } from '@icon-park/vue-next/es/all'
 const title = import.meta.env.VITE_APP_TITLE
 
 const toDemo = () => {
@@ -23,8 +24,9 @@ const toDemo = () => {
       <view class="icon-[logos--vue] h-[71px] w-[106px]" />
       <view class="icon-[logos--tailwindcss-icon] h-[54px] w-[156px]" />
     </view>
-    <view class="mt-4 text-4xl">
+    <view class="mt-4 flex items-center text-4xl">
       {{ title }}
+      <icon-park type="share" theme="filled" size="14" />
     </view>
     <view class="mt-4">
       <nut-button type="primary" @click="toDemo">✋你好</nut-button>
