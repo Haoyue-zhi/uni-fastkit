@@ -117,9 +117,7 @@ export default defineConfig(({ mode }) => {
       port: Number.parseInt(VITE_PORT),
     },
     build: {
-      // App，小程序端源码调试,需要主动开启 sourcemap.默认是false
-      sourcemap:
-        state.isApp || state.isMp ? true : state.isH5 ? VITE_SHOW_SOURCEMAP === 'true' : false,
+      sourcemap: state.isH5 ? VITE_SHOW_SOURCEMAP === 'true' : false, // 默认是false
       target: 'es6',
       minify: mode === 'development' ? false : 'terser',
       terserOptions: {
