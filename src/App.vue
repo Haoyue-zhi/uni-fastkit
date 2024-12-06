@@ -16,6 +16,6 @@ onHide(() => {
 <style lang="scss">
 /* #ifndef APP-NVUE */
 @import 'nutui-uniapp/styles/index';
-/* #endif */
 @import '@/styles/tailwind.css';
+/* #endif */
 </style>
