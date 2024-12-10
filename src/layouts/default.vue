@@ -26,7 +26,7 @@ defineExpose({
   <!-- #endif -->
   <nut-config-provider :theme-vars="themeVars">
     <slot />
-    <nut-toast></nut-toast>
-    <nut-notify></nut-notify>
+    <nut-toast />
+    <nut-notify />
   </nut-config-provider>
 </template>

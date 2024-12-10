@@ -7,7 +7,6 @@
 </route>
 
 <script setup lang="ts">
-// import { IconPark } from '@icon-park/vue-next/es/all'
 const title = import.meta.env.VITE_APP_TITLE
 
 const toDemo = () => {
