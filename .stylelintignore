@@ -1,10 +1,11 @@
 .husky
 .vscode
+.idea
 
 dist
-src/uni_modules/
-src/nativeplugins/
-src/uni.scss
+uni_modules
+nativeplugins
+uni.scss
 
 *.js
 *.cjs

@@ -1,2 +1,6 @@
-src/uni_modules/
-src/nativeplugins/
+.husky
+.vscode
+.idea
+
+uni_modules
+nativeplugins
