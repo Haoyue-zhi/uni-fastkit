@@ -9,9 +9,14 @@
 <script setup lang="ts">
 const title = import.meta.env.VITE_APP_TITLE
 
+const { push } = useRouter()
+
 const toDemo = () => {
-  uni.navigateTo({
-    url: '/pages-sub/demo/index',
+  push({
+    path: '/pages-sub/demo/index',
+    query: {
+      name: '凪',
+    },
   })
 }
 </script>
