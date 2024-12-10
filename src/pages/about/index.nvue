@@ -7,10 +7,22 @@
 }
 </route>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { alovaGetDemo } from '@/api/demo'
+import { useRequest } from 'alova/client'
+
+// eslint-disable-next-line unused-imports/no-unused-vars
+const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {
+  initialData: {}, // 设置data状态的初始数据
+  immediate: true, // 是否立即发送请求，默认为true
+}).onSuccess((event) => {
+  // eslint-disable-next-line no-console
+  console.log('🚀 >>> event:', event)
+})
+</script>
 
 <template>
-  <view>关于</view>
+  <view class="bg-red-500">关于</view>
 </template>
 
 <style scoped lang="scss"></style>
