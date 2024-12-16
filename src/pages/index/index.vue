@@ -30,7 +30,6 @@ const toDemo = () => {
     </view>
     <view class="mt-4 flex items-center text-4xl">
       {{ title }}
-      <icon-park type="share" theme="filled" size="14" />
     </view>
     <view class="mt-4">
       <nut-button type="primary" @click="toDemo">✋你好</nut-button>
