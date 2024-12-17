@@ -22,7 +22,7 @@ const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {
 </script>
 
 <template>
-  <view class="bg-red-500">关于</view>
+  <view>关于</view>
 </template>
 
 <style scoped lang="scss"></style>

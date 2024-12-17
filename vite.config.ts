@@ -106,7 +106,7 @@ export default defineConfig(({ mode }) => {
         scss: {
           api: 'modern-compiler',
           additionalData: `@import "nutui-uniapp/styles/variables.scss";`,
-          silenceDeprecations: ['legacy-js-api', 'import'], // 暂时隐藏scss报错
+          silenceDeprecations: ['legacy-js-api', 'global-builtin', 'import'], // 暂时隐藏scss报错
         },
       },
     },
