@@ -1,11 +1,11 @@
 import { useAuthStore } from '@/store'
 import AdapterUniapp from '@alova/adapter-uniapp'
 import { createAlova } from 'alova'
-import { baseUrl, commonHeaders } from './common'
+import { baseUrl as baseURL, commonHeaders, timeout } from './common'
 
 const alova = createAlova({
-  baseURL: baseUrl,
-  timeout: 1000 * 3,
+  baseURL,
+  timeout,
   ...AdapterUniapp(),
   async beforeRequest(method) {
     const authStore = useAuthStore()

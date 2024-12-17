@@ -4,5 +4,6 @@ export const baseUrl = import.meta.env.VITE_BASE_URL
 export const commonHeaders = {
   Accept: 'application/json',
   'Content-Type': 'application/json; charset=utf-8',
-  'X-Version': `${pkg.name}/${pkg.versionCode}`,
+  'X-Version': `${encodeURIComponent(pkg.name)}/${pkg.versionCode}`,
 }
+export const timeout = 1000 * 3

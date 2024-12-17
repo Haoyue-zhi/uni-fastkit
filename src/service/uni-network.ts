@@ -1,11 +1,11 @@
 import { useAuthStore } from '@/store'
 import uniNetwork from '@uni-helper/uni-network'
-import { baseUrl, commonHeaders } from './common'
+import { baseUrl, commonHeaders, timeout } from './common'
 import emitter from './helper'
 
 const un = uniNetwork.create({
   baseUrl,
-  timeout: 1000 * 3,
+  timeout,
   headers: commonHeaders,
 })
 
