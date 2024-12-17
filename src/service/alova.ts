@@ -15,14 +15,14 @@ const alova = createAlova({
       ...commonHeaders,
     }
   },
-  responded: {
-    async onSuccess(response: any) {
+  responded: (response, method) => {
+    const requestType = method.config.requestType || ''
+    if (['upload', 'download'].includes(requestType)) {
       return response
-    },
-
-    async onError(err) {
-      throw err
-    },
+    } else {
+      const { data } = response as UniNamespace.RequestSuccessCallbackResult
+      return data
+    }
   },
 })
 
