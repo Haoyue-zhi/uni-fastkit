@@ -13,23 +13,50 @@ const un = uniNetwork.create({
 un.interceptors.request.use(
   (config) => {
     const authStore = useAuthStore()
-    config.headers!.Authorization = `Bearer ${authStore.token}`
+    const tonken = authStore.token
+    config.headers!.Authorization = tonken ? `Bearer ${authStore.token}` : null
     return config
   },
   (error) => {
-    return Promise.reject(new Error(`请求失败${error}`))
+    return Promise.reject(error)
   },
 )
 
 // 响应拦截器
 un.interceptors.response.use(
   (response) => {
-    if (!response.data) {
-      return Promise.reject(new Error('响应数据为空'))
+    const handleResponseData = (data: any) => {
+      const parsedData = typeof data === 'string' ? JSON.parse(data) : data
+      return parsedData
     }
-    return response.data as any
+
+    if (response.status! >= 200 && response.status! < 300) {
+      const hasData = 'data' in response
+      const data = hasData ? response.data : response
+      return hasData ? handleResponseData(data) : data
+    } else {
+      uni.showToast({
+        icon: 'none',
+        title: '接口异常',
+      })
+      return response
+    }
   },
   (error) => {
+    let message = error.message
+    if (message === 'Network Error') {
+      message = '后端网络故障'
+    }
+    if (message.includes('timeout')) {
+      message = '接口请求超时'
+    }
+    if (message.includes('Request failed with status code')) {
+      message = `接口${message.substr(message.length - 3)}异常`
+    }
+    uni.showToast({
+      icon: 'none',
+      title: message,
+    })
     if (error.response.status === 401) {
       emitter.emit('API_UNAUTH')
     }
