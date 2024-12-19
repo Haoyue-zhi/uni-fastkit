@@ -1,6 +1,6 @@
 {
   "name": "uni-fastkit",
-  "version": "0.1.7-rc",
+  "version": "0.1.8-rc",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",

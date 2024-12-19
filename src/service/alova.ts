@@ -2,6 +2,7 @@ import { useAuthStore } from '@/store'
 import AdapterUniapp from '@alova/adapter-uniapp'
 import { createAlova } from 'alova'
 import { baseUrl as baseURL, commonHeaders, timeout } from './common'
+import emitter from './helper'
 
 const alova = createAlova({
   baseURL,
@@ -28,10 +29,7 @@ const alova = createAlova({
         const data = hasData ? response.data : response
         return hasData ? handleResponseData(data) : data
       } else {
-        uni.showToast({
-          icon: 'none',
-          title: '接口异常',
-        })
+        emitter.emit('API_INVALID')
         return response
       }
     },

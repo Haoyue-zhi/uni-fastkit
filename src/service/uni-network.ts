@@ -35,10 +35,7 @@ un.interceptors.response.use(
       const data = hasData ? response.data : response
       return hasData ? handleResponseData(data) : data
     } else {
-      uni.showToast({
-        icon: 'none',
-        title: '接口异常',
-      })
+      emitter.emit('API_INVALID')
       return response
     }
   },
