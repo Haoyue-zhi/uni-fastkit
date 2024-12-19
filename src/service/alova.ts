@@ -16,12 +16,16 @@ const alova = createAlova({
     }
   },
   responded: (response, method) => {
-    const requestType = method.config.requestType || ''
-    if (['upload', 'download'].includes(requestType)) {
-      return response
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      const requestType = method.config.requestType || ''
+      if (['upload', 'download'].includes(requestType)) {
+        return response
+      } else {
+        const { data } = response as UniNamespace.RequestSuccessCallbackResult
+        return data
+      }
     } else {
-      const { data } = response as UniNamespace.RequestSuccessCallbackResult
-      return data
+      return response
     }
   },
 })
