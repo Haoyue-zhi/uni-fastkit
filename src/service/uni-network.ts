@@ -35,7 +35,7 @@ un.interceptors.response.use(
       const data = hasData ? response.data : response
       return hasData ? handleResponseData(data) : data
     } else {
-      emitter.emit('API_INVALID')
+      emitter.emit('API_ERROR', '接口请求失败，请稍后再试')
       return response
     }
   },
@@ -50,13 +50,8 @@ un.interceptors.response.use(
     if (message.includes('Request failed with status code')) {
       message = `接口${message.substr(message.length - 3)}异常`
     }
-    uni.showToast({
-      icon: 'none',
-      title: message,
-    })
-    if (error.response.status === 401) {
-      emitter.emit('API_UNAUTH')
-    }
+
+    emitter.emit('API_ERROR', message)
     return Promise.reject(error)
   },
 )

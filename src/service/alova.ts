@@ -29,7 +29,7 @@ const alova = createAlova({
         const data = hasData ? response.data : response
         return hasData ? handleResponseData(data) : data
       } else {
-        emitter.emit('API_INVALID')
+        emitter.emit('API_ERROR', '接口请求失败，请稍后再试')
         return response
       }
     },
@@ -44,10 +44,8 @@ const alova = createAlova({
       if (message.includes('Request failed with status code')) {
         message = `接口${message.substr(message.length - 3)}异常`
       }
-      uni.showToast({
-        icon: 'none',
-        title: message,
-      })
+
+      emitter.emit('API_ERROR', message)
     },
   },
 })

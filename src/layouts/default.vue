@@ -3,8 +3,8 @@ import emitter from '@/service/helper'
 
 const toast = useToast('serviceToast')
 
-emitter.on('API_INVALID', () => {
-  toast.error('接口请求失败，请稍后再试')
+emitter.on('API_ERROR', (val) => {
+  toast.error(val)
 })
 
 const scrollState = ref(false)
