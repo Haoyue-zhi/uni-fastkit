@@ -68,7 +68,6 @@ export function restoreUrl(path: string, query: Record<string, unknown>) {
  */
 export function onAlipaySandbox(on: boolean = true) {
   const style = 'background:#1677ff;color:#fff;padding:2px 4px;border-radius:4px;'
-  // #ifdef APP
   const message = on ? '支付宝沙箱已开启' : '支付宝沙箱已关闭'
   // eslint-disable-next-line no-console
   console.log(`%c${message}`, style)
@@ -83,12 +82,6 @@ export function onAlipaySandbox(on: boolean = true) {
   } catch (e) {
     console.error('支付宝沙箱开启失败', e)
   }
-  // #endif
-
-  // #ifndef APP
-  // eslint-disable-next-line no-console
-  console.log('%c支付宝沙箱仅支持 APP 端', style)
-  // #endif
 }
 
 /**
