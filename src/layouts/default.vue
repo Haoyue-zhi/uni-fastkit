@@ -48,7 +48,7 @@ defineExpose({
 </script>
 
 <template>
-  <!-- #ifdef APP -->
+  <!-- #ifndef H5 -->
   <page-meta :page-style="`overflow:${scrollState ? 'hidden' : 'visible'};`" />
   <!-- #endif -->
   <nut-config-provider :theme-vars="themeVars">
