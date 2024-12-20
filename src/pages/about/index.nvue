@@ -9,7 +9,15 @@
 
 <script setup lang="ts">
 import { alovaGetDemo } from '@/api/demo'
+import emitter from '@/service/helper'
 import { useRequest } from 'alova/client'
+
+emitter.on('API_ERROR', (msg: string) => {
+  uni.showToast({
+    title: msg,
+    icon: 'none',
+  })
+})
 
 // eslint-disable-next-line unused-imports/no-unused-vars
 const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {
@@ -18,6 +26,10 @@ const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {
 }).onSuccess((event) => {
   // eslint-disable-next-line no-console
   console.log('🚀 >>> event:', event)
+})
+
+onShow(() => {
+  send()
 })
 </script>
 
