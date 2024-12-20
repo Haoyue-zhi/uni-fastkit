@@ -9,15 +9,10 @@
 
 <script setup lang="ts">
 import { alovaGetDemo } from '@/api/demo'
-import emitter from '@/service/helper'
+import { toastError } from '@/service/interceptorHandler'
 import { useRequest } from 'alova/client'
 
-emitter.on('API_ERROR', (msg: string) => {
-  uni.showToast({
-    title: msg,
-    icon: 'none',
-  })
-})
+toastError()
 
 // eslint-disable-next-line unused-imports/no-unused-vars
 const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {

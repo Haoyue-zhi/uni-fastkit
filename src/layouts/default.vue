@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import emitter from '@/service/helper'
+import { toastError } from '@/service/interceptorHandler'
 import { addUnit, getRect } from '@/utils/tools'
 import { configProviderThemeVars } from './theme'
 
 const toast = useToast('serviceToast')
 
-emitter.on('API_ERROR', (val) => {
-  toast.error(val)
-})
+toastError(toast)
 
 const scrollState = ref(false)
 
