@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { toastError } from '@/service/interceptorHandler'
-import { addUnit, getRect } from '@/utils/tools'
 import { configProviderThemeVars } from './theme'
 
 const toast = useToast('serviceToast')
 
 toastError(toast)
-
+// #ifdef APP
 const scrollState = ref(false)
 
 function lockScroll(val: boolean) {
   scrollState.value = val
 }
+// #endif
 
 const themeVars = reactive({
   ...configProviderThemeVars,
@@ -23,47 +23,22 @@ function setTheme(val: Record<string, string>) {
   Object.assign(themeVars, val)
 }
 
-const header = ref()
-const footer = ref()
-const headerHeight = ref(0)
-const footerHeight = ref(0)
-
-onMounted(() => {
-  if (header.value) {
-    getRect('#header', false).then((res) => {
-      headerHeight.value = Number(res.height)
-    })
-  }
-  if (footer.value) {
-    getRect('#footer', false).then((res) => {
-      footerHeight.value = Number(res.height)
-    })
-  }
-})
-
 defineExpose({
   setTheme,
+  // #ifdef APP
   lockScroll,
+  // #endif
 })
 </script>
 
 <template>
-  <!-- #ifndef H5 -->
+  <!-- #ifdef APP -->
   <page-meta :page-style="`overflow:${scrollState ? 'hidden' : 'visible'};`" />
   <!-- #endif -->
-  <nut-config-provider :theme-vars="themeVars" custom-class="relative">
-    <view v-if="$slots.header" id="header" ref="header">
-      <slot name="header" />
-    </view>
-    <!-- #ifndef MP -->
-    <slot :footer-height="footerHeight" :header-height="headerHeight" />
-    <!-- #endif -->
-    <!-- #ifdef MP -->
+  <nut-config-provider :theme-vars="themeVars">
+    <slot name="header" />
     <slot />
-    <!-- #endif -->
-    <view v-if="$slots.footer" id="footer" ref="footer" :style="{ height: addUnit(footerHeight) }">
-      <slot name="footer" />
-    </view>
+    <slot name="footer" />
 
     <nut-toast />
     <nut-notify />
