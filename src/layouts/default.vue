@@ -51,8 +51,8 @@ defineExpose({
   <!-- #ifndef H5 -->
   <page-meta :page-style="`overflow:${scrollState ? 'hidden' : 'visible'};`" />
   <!-- #endif -->
-  <nut-config-provider :theme-vars="themeVars">
-    <view v-if="$slots.header" id="header" ref="header" class="sticky top-[var(--window-top)] z-10">
+  <nut-config-provider :theme-vars="themeVars" custom-class="relative">
+    <view v-if="$slots.header" id="header" ref="header">
       <slot name="header" />
     </view>
     <!-- #ifndef MP -->
@@ -61,10 +61,8 @@ defineExpose({
     <!-- #ifdef MP -->
     <slot />
     <!-- #endif -->
-    <view v-if="$slots.footer" :style="{ height: addUnit(footerHeight) }">
-      <view id="footer" ref="footer" class="fixed bottom-[var(--window-bottom)] z-[1] w-full">
-        <slot name="footer" />
-      </view>
+    <view v-if="$slots.footer" id="footer" ref="footer" :style="{ height: addUnit(footerHeight) }">
+      <slot name="footer" />
     </view>
 
     <nut-toast />
