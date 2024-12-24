@@ -1,7 +1,7 @@
 import { useAuthStore } from '@/store'
 import AdapterUniapp from '@alova/adapter-uniapp'
 import { createAlova } from 'alova'
-import { baseUrl as baseURL, commonHeaders, timeout } from './common'
+import { DefaultBaseUrl as baseURL, DefaultHeaders, timeout } from './common'
 import emitter from './helper'
 
 const alova = createAlova({
@@ -12,9 +12,9 @@ const alova = createAlova({
     const authStore = useAuthStore()
     const token = authStore.token
     method.config.headers = {
-      ...method.config.headers,
       Authorization: token ? `Bearer ${authStore.token}` : null,
-      ...commonHeaders,
+      ...DefaultHeaders,
+      ...method.config.headers,
     }
   },
   responded: {

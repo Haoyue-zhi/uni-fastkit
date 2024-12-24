@@ -1,20 +1,23 @@
 import { useAuthStore } from '@/store'
 import uniNetwork from '@uni-helper/uni-network'
-import { baseUrl, commonHeaders, timeout } from './common'
+import { DefaultBaseUrl as baseUrl, DefaultHeaders, timeout } from './common'
 import emitter from './helper'
 
 const un = uniNetwork.create({
   baseUrl,
   timeout,
-  headers: commonHeaders,
 })
 
 // 请求拦截器
 un.interceptors.request.use(
   (config) => {
     const authStore = useAuthStore()
-    const tonken = authStore.token
-    config.headers!.Authorization = tonken ? `Bearer ${authStore.token}` : null
+    const token = authStore.token
+    config.headers = {
+      Authorization: token ? `Bearer ${authStore.token}` : null,
+      ...DefaultHeaders,
+      ...config.headers,
+    }
     return config
   },
   (error) => {
