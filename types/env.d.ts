@@ -12,8 +12,14 @@ interface ImportMetaEnv {
   readonly VITE_APP_TITLE: string
   /** 服务端口号 */
   readonly VITE_SERVER_PORT: string
-  /** 上传图片地址 */
-  readonly VITE_UPLOAD_BASEURL: string
+  /** uniapp-id */
+  readonly VITE_UNI_APPID: string
+  /** 微信小程序-appid */
+  readonly VITE_WX_APPID: string
+  /** 请求地址 */
+  readonly VITE_BASE_URL: string
+  /** 是否开启sourcemap */
+  readonly VITE_SHOW_SOURCEMAP: string
   /** 是否清除console */
   readonly VITE_DELETE_CONSOLE: string
   // 更多环境变量...
