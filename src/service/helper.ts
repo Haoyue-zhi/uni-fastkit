@@ -1,12 +1,4 @@
-const eventNames = [
-  'API_SUCCESS',
-  'API_ERROR',
-  'API_REQUEST',
-  'ROUTER_BEFORE',
-  'ROUTER_AFTER',
-  'APP_INIT',
-  'APP_LOGOUT',
-] as const
+const eventNames = ['API_ERROR'] as const
 
 type EventName = (typeof eventNames)[number]
 
@@ -32,6 +24,18 @@ class EventEmitter {
       throw new Error(`Event "${eventName}" is not supported.`)
     }
     this.listeners[eventName].forEach((handler) => handler(...args))
+  }
+
+  off(eventName: EventName, callback: EventCallback) {
+    this.listeners[eventName]?.delete(callback)
+  }
+
+  once(eventName: EventName, callback: EventCallback) {
+    const handler = (...arg: any[]) => {
+      callback(...arg)
+      this.off(eventName, handler)
+    }
+    this.on(eventName, handler)
   }
 }
 

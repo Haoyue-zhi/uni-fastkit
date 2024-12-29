@@ -9,10 +9,9 @@
 
 <script setup lang="ts">
 import { alovaGetDemo } from '@/api/demo'
-import { toastError } from '@/service/interceptorHandler'
 import { useRequest } from 'alova/client'
 
-toastError()
+useErrorToast()
 
 // eslint-disable-next-line unused-imports/no-unused-vars
 const { loading, data, error, send, update } = useRequest(alovaGetDemo(), {

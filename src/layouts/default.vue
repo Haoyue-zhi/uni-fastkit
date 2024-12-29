@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { toastError } from '@/service/interceptorHandler'
 import { configProviderThemeVars } from './theme'
 
 const toast = useToast('serviceToast')
 
-toastError(toast)
+useErrorToast(toast)
+
 // #ifdef APP
 const scrollState = ref(false)
 
