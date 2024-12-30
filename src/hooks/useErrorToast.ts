@@ -3,7 +3,7 @@ import emitter from '@/service/helper'
 export function useErrorToast(toast?: ToastInst) {
   let errorFn: (msg: string) => void
   function useToast(msg: string) {
-    return toast ? toast.error(msg) : uni.showToast({ title: msg, icon: 'none' })
+    return toast ? toast.error(msg) : uni.showToast({ title: msg, icon: 'error' })
   }
 
   function closeToast() {

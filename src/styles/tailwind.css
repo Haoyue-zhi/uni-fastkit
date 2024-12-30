@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  svg {
+    /* 修复uni.showToast图标错位问题 */
+    display: inline;
+  }
+}
