@@ -19,6 +19,11 @@ export function useErrorToast(toast?: ToastInst) {
     emitter.off('API_ERROR', errorFn)
   }
 
+  function resetToast() {
+    delErrorToast()
+    closeToast()
+  }
+
   // 所有页面使用
   onShow(() => {
     addErrorToast()
@@ -26,13 +31,11 @@ export function useErrorToast(toast?: ToastInst) {
 
   // tabBar页使用
   onHide(() => {
-    delErrorToast()
-    closeToast()
+    resetToast()
   })
 
   // 子页面使用
   onUnload(() => {
-    delErrorToast()
-    closeToast()
+    resetToast()
   })
 }
