@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  uni-fastkit -  开箱即用uniapp开发框架
+  uni-fastkit -  快如其名，开箱即用。
 </h1>
 
 <div align="center">
@@ -39,7 +39,7 @@
 
 构建项目 `pnpm build:{platform}`
 
-## 📄 License
+## License
 
 [MIT](https://opensource.org/licenses/MIT)
 
