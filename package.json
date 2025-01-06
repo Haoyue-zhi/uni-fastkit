@@ -75,7 +75,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4040420241231001",
     "@dcloudio/uni-mp-xhs": "3.0.0-alpha-4040420241231001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-4040420241231001",
-    "@uni-helper/uni-network": "^0.19.3",
+    "@uni-helper/uni-network": "^0.20.0",
     "alova": "^3.2.7",
     "nutui-uniapp": "^1.8.1",
     "pinia": "^2.3.0",
