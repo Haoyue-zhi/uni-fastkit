@@ -60,8 +60,8 @@ importers:
         specifier: 3.0.0-alpha-4040420241231001
         version: 3.0.0-alpha-4040420241231001(@nuxt/kit@3.15.0(rollup@4.29.1))(postcss@8.4.49)(rollup@4.29.1)(vue@3.5.13(typescript@5.7.2))
       '@uni-helper/uni-network':
-        specifier: ^0.19.3
-        version: 0.19.3(vue@3.5.13(typescript@5.7.2))
+        specifier: ^0.20.0
+        version: 0.20.0(vue@3.5.13(typescript@5.7.2))
       alova:
         specifier: ^3.2.7
         version: 3.2.7
@@ -2272,12 +2272,12 @@ packages:
   '@uni-helper/uni-env@0.1.7':
     resolution: {integrity: sha512-vxWnscbm1VgmK4ZzqN721mY0mIIVCeJutA32fH9P29itaYewVfL9VAWZWZi7nHJEssTkzhfdTTfydcnJKxUQzg==}
 
-  '@uni-helper/uni-network@0.19.3':
-    resolution: {integrity: sha512-biQtckY/195TmqOeJbKD5tyZEctlOOP2OwqsYDukCx9nqV+5jOC7J2vCHeYXlqzNfHDq5PXzNG4HrIARkF/uvQ==}
+  '@uni-helper/uni-network@0.20.0':
+    resolution: {integrity: sha512-NWy5hf3CHT+t/6geBhkM0rTQtvWrhZHrPIZVWjiIlth410AmcxGQWQ4lQZ9e/+udn64T1kWi9pVaRay2AcJAiQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@vue/composition-api': ^1.0.0
-      '@vueuse/core': ^9.0.0 || ^10.0.0 || ^11.0.0
+      '@vueuse/core': ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
       vue: ^2.6.0 || ^2.7.0 || ^3.2.0
     peerDependenciesMeta:
       '@vue/composition-api':
@@ -8795,7 +8795,7 @@ snapshots:
     dependencies:
       std-env: 3.8.0
 
-  '@uni-helper/uni-network@0.19.3(vue@3.5.13(typescript@5.7.2))':
+  '@uni-helper/uni-network@0.20.0(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       '@dcloudio/types': 3.4.14
       '@types/lodash.merge': 4.6.9
