@@ -20,7 +20,12 @@ const alova = createAlova({
   responded: {
     onSuccess: (response) => {
       const handleResponseData = (data: any) => {
-        const parsedData = typeof data === 'string' ? JSON.parse(data) : data
+        let parsedData
+        try {
+          parsedData = typeof data === 'string' ? JSON.parse(data) : data
+        } catch {
+          parsedData = data
+        }
         return parsedData
       }
 
