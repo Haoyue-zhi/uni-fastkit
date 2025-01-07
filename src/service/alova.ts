@@ -42,7 +42,7 @@ const alova = createAlova({
         message = '接口请求超时'
       }
       if (message.includes('Request failed with status code')) {
-        message = `接口${message.substr(message.length - 3)}异常`
+        message = `接口${message.slice(message.length - 3)}异常`
       }
 
       emitter.emit('API_ERROR', message)
