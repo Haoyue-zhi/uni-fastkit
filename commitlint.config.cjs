@@ -1,6 +1,6 @@
-import { defineConfig } from 'czg'
+const { defineConfig } = require('czg')
 
-export default defineConfig({
+module.exports = defineConfig({
   extends: ['@commitlint/config-conventional'],
   prompt: {
     alias: { fd: 'docs: fix typos' },

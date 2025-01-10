@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended", "schedule:monthly"],
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchPackageNames": ["@types/**", "@dcloudio/types", "miniprogram-api-typings"]
+    }
   ]
 }
