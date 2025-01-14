@@ -44,7 +44,7 @@ function getRouter() {
   return arr
 }
 
-export function useRouter() {
+export function useRouter(loginPath?: string) {
   const router = routes
 
   const currentpage = getCurrentPage()
@@ -170,9 +170,12 @@ export function useRouter() {
   }
 
   // 去登录
-  const login = (loginPath: string, options?: { reLaunch: boolean }) => {
+  const login = (options?: { reLaunch: boolean }) => {
     const { reLaunch = false } = options || {}
-
+    if (!loginPath) {
+      console.warn('Login path is not defined')
+      return
+    }
     push({
       path: loginPath,
       mode: reLaunch ? 'reLaunch' : 'navigateTo',
