@@ -103,5 +103,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // tailwind css 修复
-  "css.customData": [".vscode/tailwind.json"]
+  "css.customData": [
+    ".vscode/tailwind.json"
+  ],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }
