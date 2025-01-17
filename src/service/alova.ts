@@ -31,8 +31,7 @@ const alova = createAlova({
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
         const hasData = 'data' in response
-        const data = hasData ? response.data : response
-        return hasData ? handleResponseData(data) : data
+        return hasData ? handleResponseData(response.data) : response
       } else {
         emitter.emit('API_ERROR', '接口请求失败，请稍后再试')
         return response
