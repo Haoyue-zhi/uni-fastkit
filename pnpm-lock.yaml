@@ -59,6 +59,9 @@ importers:
       '@dcloudio/uni-quickapp-webview':
         specifier: 3.0.0-4040520250104002
         version: 3.0.0-4040520250104002(@nuxt/kit@3.15.0(rollup@4.29.1))(postcss@8.4.49)(rollup@4.29.1)(vue@3.5.13(typescript@5.7.2))
+      '@iconify/json':
+        specifier: ^2.2.297
+        version: 2.2.297
       '@uni-helper/uni-network':
         specifier: ^0.20.0
         version: 0.20.0(vue@3.5.13(typescript@5.7.2))
@@ -108,9 +111,6 @@ importers:
       '@dcloudio/vite-plugin-uni':
         specifier: 3.0.0-4040520250104002
         version: 3.0.0-4040520250104002(@nuxt/kit@3.15.0(rollup@4.29.1))(postcss@8.4.49)(rollup@4.29.1)(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(sass-embedded@1.83.1)(sass@1.81.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.2))
-      '@iconify-json/logos':
-        specifier: ^1.2.4
-        version: 1.2.4
       '@iconify/tailwind':
         specifier: ^1.2.0
         version: 1.2.0
@@ -1589,8 +1589,8 @@ packages:
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
 
-  '@iconify-json/logos@1.2.4':
-    resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
+  '@iconify/json@2.2.297':
+    resolution: {integrity: sha512-Mu7m+R8xH0EQxkZ9Zq9ZqT7twennzG2E9BojDiWEwoKialJpHB99Aj+jKdRvlEkwDE7RuHxvf0fHdamhPXZ8uw==}
 
   '@iconify/tailwind@1.2.0':
     resolution: {integrity: sha512-KgpIHWOTcRYw1XcoUqyNSrmYyfLLqZYu3AmP8zdfLk0F5TqRO8YerhlvlQmGfn7rJXgPeZN569xPAJnJ53zZxA==}
@@ -7883,9 +7883,10 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
-  '@iconify-json/logos@1.2.4':
+  '@iconify/json@2.2.297':
     dependencies:
       '@iconify/types': 2.0.0
+      pathe: 1.1.2
 
   '@iconify/tailwind@1.2.0':
     dependencies:
