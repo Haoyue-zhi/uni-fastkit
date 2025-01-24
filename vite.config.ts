@@ -3,17 +3,16 @@ import { join, resolve } from 'node:path'
 import process from 'node:process'
 import { defineConfig, loadEnv } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
-// uni-helper
+// uni
 import { NutResolver } from 'nutui-uniapp'
 import UniComponents from '@uni-helper/vite-plugin-uni-components'
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
-import UniTailwind from '@uni-helper/vite-plugin-uni-tailwind'
 // postcss
 import tailwindcss from 'tailwindcss'
-import autoprefixer from 'autoprefixer'
 // other
+import { UnifiedViteWeappTailwindcssPlugin as uvwt } from 'weapp-tailwindcss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import ViteRestart from 'vite-plugin-restart'
 
@@ -30,10 +29,10 @@ const uniPlugin = [
     dts: 'types/uni-pages.d.ts',
     subPackages: ['src/pages-sub'],
     exclude: ['**/components/**/*.*'],
-    minify: true,
+    minify: false,
     routeBlockLang: 'json5',
   }),
-  UniManifest({ minify: true }),
+  UniManifest({ minify: false }),
 ]
 
 const vitePlugin = [
@@ -67,8 +66,6 @@ const vitePlugin = [
   }),
 ]
 
-const postcssPlugins = [tailwindcss()]
-
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, resolve(process.cwd(), 'env'))
 
@@ -85,11 +82,7 @@ export default defineConfig(({ mode }) => {
   const plugins = [...uniPlugin, ...vitePlugin, uni()]
 
   if (state.isMp) {
-    plugins.push(UniTailwind())
-  }
-
-  if (state.isH5) {
-    postcssPlugins.push(autoprefixer())
+    plugins.push(uvwt())
   }
 
   return {
@@ -102,7 +95,7 @@ export default defineConfig(({ mode }) => {
     },
     css: {
       postcss: {
-        plugins: postcssPlugins,
+        plugins: [tailwindcss()],
       },
       preprocessorOptions: {
         scss: {

@@ -27,7 +27,7 @@ export default {
     'selector-type-no-unknown': [
       true,
       {
-        ignoreTypes: ['page', 'rich-text', 'scroll-view'],
+        ignoreTypes: ['page', 'rich-text', 'scroll-view', '/^uni-/'],
       },
     ],
     'comment-empty-line-before': 'never',

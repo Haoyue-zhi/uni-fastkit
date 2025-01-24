@@ -1,39 +1,11 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
-  "compilerOptions": {
-    "lib": ["esnext", "dom"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
     },
-    "types": [
-      // VITE 相关的 TypeScript 类型
-      "vite/client",
-      // uni API 相关的 TypeScript 类型
-      "@dcloudio/types",
-      // 为 uni-app 组件提供 TypeScript 类型
-      "@uni-helper/uni-app-types",
-      // wx API 相关的 TypeScript 类型
-      "miniprogram-api-typings",
-      // nutui-uniapp 相关的 TypeScript 类型
-      "nutui-uniapp/global.d.ts",
-      // z-paging 相关的 TypeScript 类型
-      "z-paging/types"
-    ],
-    "allowJs": true,
-    "sourceMap": true
-  },
-  "vueCompilerOptions": {
-    // 调整 Volar（Vue 语言服务工具）解析行为，用于为 uni-app 组件提供 TypeScript 类型
-    "plugins": ["@uni-helper/uni-app-types/volar-plugin"],
-    "extensions": [".vue", ".nvue"]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.vue",
-    "src/**/*.nvue",
-    "src/**/*.d.ts",
-    "types/**/*.d.ts"
-  ]
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ],
+  "files": []
 }

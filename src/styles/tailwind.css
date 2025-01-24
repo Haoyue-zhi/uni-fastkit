@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  svg {
+
+  img,
+  svg,
+  uni-video,
+  uni-canvas,
+  uni-audio,
+  iframe,
+  embed,
+  object {
     /* 修复uni.showToast图标错位问题 */
-    display: inline;
+    display: initial;
   }
 }
