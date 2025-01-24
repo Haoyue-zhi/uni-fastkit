@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="pinia-option.js" reformat="true" live-template-enabled="true" />
+      <template name="pinia-option.ts" reformat="true" live-template-enabled="true" />
+      <template name="pinia-setup.js" reformat="true" live-template-enabled="true" />
+      <template name="pinia-setup.ts" reformat="true" live-template-enabled="true" />
+      <template name="uniapp-nvue.nvue" reformat="true" live-template-enabled="true" />
+      <template name="uniapp-vue.vue" reformat="true" live-template-enabled="true" />
+    </default_templates>
+  </component>
+</project>
