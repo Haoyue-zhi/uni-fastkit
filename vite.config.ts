@@ -82,7 +82,7 @@ export default defineConfig(({ mode }) => {
   const plugins = [...uniPlugin, ...vitePlugin, uni()]
 
   if (state.isMp) {
-    plugins.push(uvwt())
+    plugins.push(uvwt({ rem2rpx: true }))
   }
 
   return {
