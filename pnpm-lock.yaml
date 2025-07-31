@@ -103,8 +103,8 @@ importers:
         specifier: 3.0.0-4040520250104002
         version: 3.0.0-4040520250104002(@nuxt/kit@3.15.2(rollup@4.31.0))(postcss@8.4.49)(rollup@4.31.0)(vue@3.5.13(typescript@5.7.3))
       '@dcloudio/uni-stacktracey':
-        specifier: 3.0.0-4040520250104002
-        version: 3.0.0-4040520250104002
+        specifier: 3.0.0-alpha-4070620250731001
+        version: 3.0.0-alpha-4070620250731001
       '@dcloudio/vite-plugin-uni':
         specifier: 3.0.0-4040520250104002
         version: 3.0.0-4040520250104002(@nuxt/kit@3.15.2(rollup@4.31.0))(postcss@8.4.49)(rollup@4.31.0)(vite@6.0.11(@types/node@22.10.10)(jiti@2.4.2)(sass-embedded@1.83.4)(sass@1.81.0)(terser@5.37.0)(tsx@4.19.2)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
@@ -1074,8 +1074,8 @@ packages:
   '@dcloudio/uni-shared@3.0.0-4040520250104002':
     resolution: {integrity: sha512-iPVPe2YHdH2tf+ciQsU5mU5nzn/LXt0F3pYNkZl0DMJTp3XxPNYZ/OLbOsItaikGHB6TAoYn7rMVGbN6JBfh6w==}
 
-  '@dcloudio/uni-stacktracey@3.0.0-4040520250104002':
-    resolution: {integrity: sha512-l2uUcfywn54JPY5T6oqxQ7AwCEZVzEOLq2Llkp68xnpoIz4xm64SLOVLuD27quYxQqbQQkeZEAvX2psr4xkJIg==}
+  '@dcloudio/uni-stacktracey@3.0.0-alpha-4070620250731001':
+    resolution: {integrity: sha512-GY6kKY+gjD9GHRrqXFcwYab9atbM1He0YZsDqJ+BnL6UlAt97dHf5U7Jpfg7lHaQYb/o4rPIsCH2Tm3zDNUVtQ==}
 
   '@dcloudio/uni-stat@3.0.0-4040520250104002':
     resolution: {integrity: sha512-Ir5vpemDSWX4KRNXlC+1LOCJ7eVGm/AhzEUZw7+MLruJYtLugwOWkzhWAlAm3OPUqTPCy9VTs3MolmGD5CuxNg==}
@@ -7791,7 +7791,7 @@ snapshots:
     dependencies:
       '@vue/shared': 3.4.21
 
-  '@dcloudio/uni-stacktracey@3.0.0-4040520250104002': {}
+  '@dcloudio/uni-stacktracey@3.0.0-alpha-4070620250731001': {}
 
   '@dcloudio/uni-stat@3.0.0-4040520250104002(@nuxt/kit@3.15.2(rollup@4.31.0))(postcss@8.4.49)(rollup@4.31.0)(vue@3.5.13(typescript@5.7.3))':
     dependencies:
