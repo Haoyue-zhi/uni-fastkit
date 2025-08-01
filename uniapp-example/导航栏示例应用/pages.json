@@ -1,0 +1,396 @@
+{
+  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path":"pages/index/index",
+      "style":{
+        "navigationBarTitleText": "titleNView示例",
+        "navigationBarBackgroundColor": "#f8f8f8",
+        "app-plus":{
+          "background": "#f8f8f8"
+        }
+      }
+    },
+    {
+      "path":"pages/backbutton/index",
+      "style":{
+        "navigationBarTitleText":"返回按钮",
+        "app-plus":{
+          "titleNView":{
+            "backButton":{
+              "color":"#FF0000",
+              "colorPressed":"#660000",
+              "fontSize":"32px"
+            }
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/backbutton-badge/badge",
+      "style":{
+        "navigationBarTitleText":"返回按钮-角标",
+        "app-plus":{
+          "titleNView":{
+            "backButton":{
+              "badgeText":"99",
+              "badgeColor":"#FF0000",
+              "badgeBackground":"#00FF00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/backbutton-title/title",
+      "style":{
+        "navigationBarTitleText":"返回按钮-标题",
+        "app-plus":{
+          "titleNView":{
+            "backButton":{
+              "title":"返回",
+              "titleSize": "16px"
+            }
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/background/background",
+      "style":{
+        "navigationBarTitleText":"背景图片",
+        "navigationBarBackgroundColor":"#007AFF",
+        "app-plus":{
+          "titleNView":{
+            "backgroundImage":"/static/bg.png"
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/blur/blur",
+      "style":{
+        "navigationBarTitleText":"毛玻璃效果",
+        "app-plus":{
+          "titleNView":{
+            "type":"float",
+            "backgroundColor":"",
+            "blurEffect":"light"
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons/index",
+      "style":{
+        "navigationBarTitleText":"字体图标按钮",
+        "app-plus":{
+          "titleNView":{
+            "buttons":[
+              {
+                "text":"\ue63c",
+                "fontSrc":"/static/icon.ttf",
+                "fontSize":"22px"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons-badge/badge",
+      "style":{
+        "navigationBarTitleText":"按钮红点&角标",
+        "app-plus":{
+          "titleNView":{
+            "padding-right": "6px",
+            "buttons":[
+              {
+                "redDot":true,
+                "text":"消息",
+                "fontSize":"16px",
+                "width":"auto"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons-multi/multi",
+      "style":{
+        "navigationBarTitleText":"混排按钮",
+        "app-plus":{
+          "titleNView":{
+            "padding-right": "6px",
+            "buttons":[
+              {
+                "type":"menu"
+              },
+              {
+                "type":"share"
+              },
+              {
+                "text":"文本按钮",
+                "fontSize":"16px",
+                "width":"auto",
+                "float":"left"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons-select/select",
+      "style":{
+        "navigationBarTitleText":"选择指示按钮",
+        "app-plus":{
+          "titleNView":{
+            "padding-right": "6px",
+            "buttons":[
+              {
+                "text": "北京市",
+                "color": "#09BB07",
+                "fontSize": "16px",
+                "select": true,
+                "width": "auto"
+              },
+              {
+                "text": "北京市",
+                "color": "#007AFF",
+                "fontSize": "16px",
+                "select": true,
+                "width": "0px",
+                "maxWidth": "72px",
+                "float": "left"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons-text/text",
+      "style":{
+        "navigationBarTitleText":"文字按钮",
+        "app-plus":{
+          "titleNView":{
+            "padding-right": "6px",
+            "buttons":[
+              {
+                "text":"按钮",
+                "fontSize":"16px",
+                "width":"auto"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/buttons-type/type",
+      "style":{
+        "navigationBarTitleText":"内置按钮样式",
+        "app-plus":{
+          "titleNView":{
+            "buttons":[
+              {
+                "type":"menu"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/search/index",
+      "style":{
+        "navigationBarTitleText":"搜索框",
+        "app-plus":{
+          "titleNView":{
+            "padding-right": "6px",
+            "searchInput":{
+              "borderRadius": "15px",
+              "placeholder": "输入要搜索内容"
+            },
+            "buttons":[
+              {
+                "text":"搜索",
+                "fontSize": "16px",
+                "width": "48px"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/search-focus/focus",
+      "style":{
+        "navigationBarTitleText":"搜索框",
+        "app-plus":{
+          "titleNView":{
+            "searchInput": {
+              "borderRadius": "15px",
+              "autoFocus": true,
+              "text": "sss"
+            },
+            "buttons":[
+              {
+                "text":"搜索",
+                "fontSize": "16px",
+                "width": "48px"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/search-input/input",
+      "style":{
+        "navigationBarTitleText":"搜索框",
+        "app-plus":{
+          "titleNView":{
+            "searchInput": {
+              "borderRadius": "15px",
+              "placeholder": "点击搜索",
+              "disabled": true
+            },
+            "buttons":[
+              {
+                "text":"搜索",
+                "fontSize": "16px",
+                "width": "48px"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/splitline/index",
+      "style":{
+        "navigationBarTitleText":"底部分割线",
+        "app-plus":{
+          "titleNView":{
+            "splitLine": {
+              "color": "#FF0000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/title/index",
+      "style":{
+        "navigationBarTitleText":"长内容主标题文本主标题文本主标题文本主标题文本",
+        "app-plus":{
+          "titleNView":{
+            "titleColor": "#FF0000",
+            "titleIcon": "/static/logo.png",
+            "buttons":[
+              {
+                "text":"搜索文字",
+                "float":"left",
+                "fontSize": "16px",
+                "width": "auto"
+              },
+              {
+                "text":"右侧按钮按钮按钮",
+                "fontSize": "16px",
+                "width": "auto"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/title-sub/sub",
+      "style":{
+        "navigationBarTitleText":"主标题",
+        "app-plus":{
+          "titleNView":{
+            "subtitleText": "副标题内容",
+            "subtitleColor": "FF0000"
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/title-icon/icon",
+      "style":{
+        "navigationBarTitleText":"标题图标",
+        "app-plus":{
+          "titleNView":{
+            "titleIcon": "/static/logo.png",
+            "titleIconRadius": "5px"
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/title-mix/mix",
+      "style":{
+        "navigationBarTitleText":"主标题",
+        "app-plus":{
+          "titleNView":{
+            "subtitleText": "副标题内容",
+            "padding-right": "6px",
+            "buttons":[
+              {
+                "type":"menu"
+              },
+              {
+                "type":"share"
+              }
+            ],
+            "titleAlign": "left",
+            "titleIcon": "/static/logo.png",
+            "titleIconRadius": "5px"
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/type-float/float",
+      "style":{
+        "navigationBarTitleText":"悬浮样式导航栏",
+        "app-plus":{
+          "titleNView":{
+            "type":"float",
+            "backgroundColor":"rgba(192,192,192,0.5)",
+            "buttons":[
+              {
+                "type":"share"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "path":"pages/type-transparent/transparent",
+      "style":{
+        "navigationBarTitleText":"透明样式导航栏",
+        "app-plus":{
+          "titleNView":{
+            "type":"transparent",
+            "buttons":[
+              {
+                "type":"share"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "globalStyle":{
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "titleNView示例",
+    "navigationBarBackgroundColor": "#C0C0C0",
+    "backgroundColor": "#F8F8F8"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "uni-app Vue Setup SFC": {
+    "scope": "vue",
+    "prefix": "vue",
+    "body": [
+      "<route lang=\"json5\" type=\"page\">",
+      "{",
+      "  layout: default,",
+      "  style: {",
+      "    navigationBarTitleText: '${TM_FILENAME_BASE}',",
+      "  },",
+      "}",
+      "</route>",
+      "",
+      "<script setup lang=\"ts\">",
+      "",
+      "</script>",
+      "",
+      "<template>",
+      "",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>",
+      ""
+    ],
+    "description": "Vue Basic Template"
+  },
+  "uni-app NVue Setup SFC": {
+    "scope": "nvue",
+    "prefix": "nvue",
+    "body": [
+      "<route lang=\"json5\" type=\"page\">",
+      "{",
+      "  layout: false,",
+      "  style: {",
+      "    navigationBarTitleText: '${TM_FILENAME_BASE}',",
+      "  },",
+      "}",
+      "</route>",
+      "",
+      "<script setup lang=\"ts\">",
+      "",
+      "</script>",
+      "",
+      "<template>",
+      "",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>",
+      ""
+    ],
+    "description": "NVue Basic Template"
+  },
+  "Print route": {
+    "scope": "vue,nvue",
+    "prefix": "rt",
+    "body": [
+      "<route lang=\"json5\" type=\"page\">",
+      "{",
+      "  layout: default,",
+      "  style: {",
+      "    navigationBarTitleText: '${TM_FILENAME_BASE}',",
+      "  },",
+      "}",
+      "</route>",
+      ""
+    ]
+  },
+  "Print script": {
+    "scope": "vue,nvue",
+    "prefix": "sc",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "",
+      "</script>",
+      ""
+    ]
+  },
+  "Print template": {
+    "scope": "vue,nvue",
+    "prefix": "tm",
+    "body": [
+      "<template>",
+      "",
+      "</template>"
+    ],
+  },
+  "Print style": {
+    "scope": "vue,nvue",
+    "prefix": "st",
+    "body": [
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+  }
+}

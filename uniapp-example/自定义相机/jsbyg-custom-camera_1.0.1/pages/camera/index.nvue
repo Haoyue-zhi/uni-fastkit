@@ -1,0 +1,39 @@
+<template>
+	<view>
+		<CustomCamera ref="CustomCamera" :coverImageType="coverImageType" @back="back" @getImage="getImage" />
+	</view>
+</template>
+
+<script>
+	// #ifdef APP
+	import CustomCamera from "@/components/CustomCamera/APP/index.nvue"
+	// #endif
+	// #ifdef MP-WEIXIN
+	import CustomCamera from "@/components/CustomCamera/WeChat/index.vue"
+	// #endif
+	export default {
+		components: {
+			CustomCamera
+		},
+		data() {
+			return {
+				coverImageType: 'side'
+			}
+		},
+		onLoad(options) {
+			this.coverImageType = options.coverImageType
+		},
+		methods: {
+			back() {
+				uni.navigateBack()
+			},
+			getImage(res) {
+				console.log(res)
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,60 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"backgroundColor":"#FFFFFF"
+			}
+		},
+		{
+            "path" : "pages/camera/camera",
+            "style" :                                                                                    
+            {
+				"navigationStyle":"custom",
+				"backgroundColor":"#000000"
+            }
+        },
+		{
+            "path" : "pages/camera/portrait/portrait",
+            "style" :                                                                                    
+            {
+				"navigationStyle":"custom",
+				"backgroundColor":"#000000"
+            }
+        }
+	    ,{
+            "path" : "pages/camera/idcard/idcard",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+                "backgroundColor":"#000000"
+            }
+            
+        }
+		,{
+            "path" : "pages/camera/idphoto/idphoto",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+                "backgroundColor":"#000000"
+            }
+            
+        }
+        ,{
+            "path" : "pages/camera/watermark/watermark",
+            "style" :                                                                                    
+            {
+               "navigationStyle":"custom",
+               "backgroundColor":"#000000"
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "live-camera",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	}
+}

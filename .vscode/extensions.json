@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "usernamehw.errorlens",
+    "uni-helper.uni-helper-vscode",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "antfu.iconify"
+  ]
+}

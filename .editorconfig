@@ -1,0 +1,21 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# 适用文件
+[*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,css,scss,sass,less,styl}]
+# 字符编码
+charset = utf-8
+# 缩进大小
+indent_size = 2
+# 缩进风格 (space, tab)
+indent_style = space
+# 在文件结尾插入新行
+insert_final_newline = true
+# 去除行首尾空格
+trim_trailing_whitespace = true
+# 结尾换行符 (lf, cr, crlf)
+end_of_line = lf
+# 最大行数
+max_line_length = 100

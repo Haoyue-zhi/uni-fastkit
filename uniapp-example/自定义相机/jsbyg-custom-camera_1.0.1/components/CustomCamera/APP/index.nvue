@@ -1,0 +1,164 @@
+<template>
+	<view>
+		<live-pusher id="livePusher" ref="livePusher" class="livePusher" mode="FHD" beauty="0" whiteness="0"
+			device-position="back" :auto-focus="true" :muted="true" :enable-camera="true" :enable-mic="true"
+			:zoom="true" :style="[{ height: cameraHeight, width: '750rpx' }]">
+
+		</live-pusher>
+		<cover-image v-if="coverImage" class="cover-image" :style="[{ height: cameraHeight + 'px', width: '750rpx' }]"
+			:src="coverImage" />
+		<view class="camera-options" :style="[{ height: optionsHeight + 'px' }]">
+			<view class="camera-options-left camera-item">
+				<image class="camera-item-image" src="/static/images/back.png" mode="scaleToFill"
+					@click="handleInstruct('back')"></image>
+			</view>
+			<view class="camera-options-center camera-item">
+				<image class="camera-item-image" src="/static/images/shutter.png" mode="scaleToFill"
+					@click="handleInstruct('shutter')"></image>
+			</view>
+			<!-- <view class="camera-options-ritht camera-item" @click="handleInstruct('reversal')">
+				<image class="camera-item-image" src="/static/images/reversal.png" mode="scaleToFill"></image>
+			</view> -->
+			<view class="camera-options-ritht camera-item">
+				<image class="camera-item-image" src="/static/images/album.png" mode="scaleToFill"
+					@click="handleInstruct('album')"></image>
+			</view>
+		</view>
+	</view>
+
+</template>
+
+<script>
+// 这个组件仅限APP使用！！！
+import config from '../config.js'
+export default {
+	props: {
+		coverImageType: { //遮罩层的类型 （必须在config里面的定义的）
+			type: String,
+			default: 'portrait'
+		}
+	},
+	data() {
+		return {
+			livePusher: null,
+			ready: true,
+			cameraHeight: '', //相机画面宽度
+			optionsHeight: '', //操作台高度
+
+			coverImage: null,
+		}
+	},
+	mounted() {
+		this.cameraHeight = uni.getSystemInfoSync().screenHeight * 0.82
+		this.optionsHeight = uni.getSystemInfoSync().screenHeight * 0.18
+		this.init()
+		try {
+			this.coverImage = config[this.coverImageType]
+		} catch (e) {
+			uni.showToast({
+				title: '传入的coverImageType不存在',
+				icon: 'none'
+			})
+		}
+	},
+	methods: {
+		init() {
+			this.livePusher = uni.createLivePusherContext('livePusher', this);
+			setTimeout(() => {
+				this.startPreview()
+			}, 1000)
+		},
+		startPreview() {
+			this.livePusher.startPreview({
+				success: () => {
+					console.log('相机初始化成功');
+					switch (plus.os.name) {
+						case 'Android':
+							break;
+						case 'iOS':
+							this.livePusher.switchCamera()
+							break
+					}
+				},
+				fail: (err) => {
+					console.log(err)
+				}
+			});
+		},
+		handleInstruct(instruct) {
+			switch (instruct) {
+				// 返回
+				case 'back':
+					this.$emit('back')
+					break;
+				// 快门
+				case 'shutter':
+					if (this.ready) {
+						this.ready = false
+						this.livePusher.snapshot({
+							success: (res) => {
+								console.log(res)
+								this.ready = true
+								this.$emit('getImage', res.message.tempImagePath)
+							}
+						})
+					}
+					break;
+				// 反转
+				case 'reversal':
+					this.livePusher.switchCamera();
+					break;
+				// 相册
+				case 'album':
+					uni.chooseImage({
+						count: 1, //默认9
+						sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+						sourceType: ['album'], //从相册选择
+						success: (res) => {
+							this.$emit('getImage', res.tempFilePaths[0])
+						}
+					})
+					break;
+			}
+		}
+	}
+}
+</script>
+
+<style scoped>
+.camera-background {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cover-image {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+
+.camera-options {
+	flex-direction: row;
+	align-items: center;
+}
+
+.camera-item {
+	flex: 1;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.camera-item .camera-item-image {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.camera-options-center .camera-item-image {
+	width: 120rpx;
+	height: 120rpx;
+}
+</style>

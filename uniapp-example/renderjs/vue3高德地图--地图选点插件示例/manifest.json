@@ -1,0 +1,104 @@
+{
+    "name" : "vue3高德地图--地图选点插件示例",
+    "appid" : "__UNI__FB09F85",
+    "description" : "",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueStyleCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        "modules" : {
+            "Geolocation" : {},
+            "Maps" : {}
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ],
+                "minSdkVersion" : 7
+            },
+            "ios" : {
+                "dSYMs" : false
+            },
+            "sdkConfigs" : {
+                "geolocation" : {
+                    "system" : {
+                        "__platform__" : [ "android" ]
+                    },
+                    "amap" : {
+                        "name" : "amapYVmQ39wD",
+                        "__platform__" : [ "android" ],
+                        "appkey_ios" : "022f9f3e258add9f79dad8b701f7606c",
+                        "appkey_android" : "022f9f3e258add9f79dad8b701f7606c"
+                    }
+                },
+                "maps" : {
+                    "amap" : {
+                        "name" : "amapYVmQ39wD",
+                        "appkey_ios" : "022f9f3e258add9f79dad8b701f7606c",
+                        "appkey_android" : "022f9f3e258add9f79dad8b701f7606c"
+                    }
+                },
+                "ad" : {}
+            }
+        }
+    },
+    "quickapp" : {},
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true,
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "定位"
+            }
+        },
+        "requiredPrivateInfos" : [ "getLocation", "startLocationUpdate", "onLocationChange" ]
+    },
+    "mp-alipay" : {
+        "usingComponents" : true
+    },
+    "mp-baidu" : {
+        "usingComponents" : true
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "vueVersion" : "3",
+    "h5" : {
+        "sdkConfigs" : {
+            "maps" : {}
+        }
+    }
+}

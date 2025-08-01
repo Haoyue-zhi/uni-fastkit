@@ -1,0 +1,18 @@
+{
+    "id": "ITkoala-amap",
+    "name": "高德、百度、腾讯地图amap-renderjs",
+    "version": "1.0.4",
+    "description": "高德地图+renderjs的一个使用示例，解决uniapp的地图组件的层级问题及地图功能扩展的局限性",
+    "keywords": [
+        "高德地图",
+        "amap",
+        "renderjs",
+        "vue"
+    ],
+    "dcloudext": {
+        "category": [
+            "前端组件",
+            "通用组件"
+        ]
+    }
+}
