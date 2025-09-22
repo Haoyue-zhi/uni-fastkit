@@ -21,7 +21,7 @@
 - 📦 [组件自动化加载](https://github.com/uni-helper/vite-plugin-uni-components)
 - 😃 [各种图标集为你所用](https://icon-sets.iconify.design/)
 - 🍍 [使用 Pinia 的状态管理](https://github.com/vuejs/pinia)
-- 🎨 [Tailwind CSS](https://tailwindcss.com/) - 原子化CSS
+- 🎨 [UnoCSS](https://unocss.dev/) - 原子化CSS
 - 🔥 [下一代请求工具](https://alova.js.org/zh-CN/) - 极致地简化你的API集成工作流，仅需一步
 - 📥 [API 自动加载](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 与UniAPP API 无需引入
 - 🚀 [Wot UI](https://wot-design-uni.cn/) - 70+ 高质量组件，支持暗黑模式、国际化和自定义主题
