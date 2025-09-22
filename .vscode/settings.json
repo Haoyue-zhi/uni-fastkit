@@ -88,8 +88,6 @@
   ],
   // 配置语言的文件关联
   "files.associations": {
-    "pages.json": "jsonc", // pages.json 可以写注释
-    "manifest.json": "jsonc", // manifest.json 可以写注释
     "*.nvue": "vue"
   },
   // 控制相关文件嵌套展示
@@ -100,8 +98,8 @@
     "pages.config.ts": "manifest.config.ts",
     "README.md": "LICENSE",
     "package.json": "package-lock.json, pnpm-lock.yaml,.gitignore,.npmrc,pnpm-workspace.yaml",
-    "vite.config.ts": "tsconfig.json",
-    "eslint.config.mjs": "eslint.config.mjs,commitlint.config.mjs,commitlint.config.cjs,.eslintrc-auto-import.json,.editorconfig"
+    "vite.config.ts": "tsconfig.json,uno.config.ts",
+    "eslint.config.js": "commitlint.config.mjs,commitlint.config.js,.eslintrc-auto-import.json,.editorconfig"
   },
   "editor.quickSuggestions": {
     "strings": "on"

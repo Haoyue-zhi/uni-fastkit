@@ -1,53 +1,49 @@
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
-import uni from '@dcloudio/vite-plugin-uni'
+// import uni from '@dcloudio/vite-plugin-uni'
+import Uni from '@uni-helper/plugin-uni'
 import UniComponents from '@uni-helper/vite-plugin-uni-components'
 import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers'
 import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
+import UniKuRoot from '@uni-ku/root'
+import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig, loadEnv } from 'vite'
-import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite'
 
 // https://vitejs.dev/config/
-export default defineConfig(async ({ mode }) => {
-  // 这里必须这样引用，因为 uni 只提供了 cjs 的版本且 uni-app 默认 cjs，而 @tailwindcss/vite 只提供了 esm 版本
-  const { default: tailwindcss } = await import('@tailwindcss/vite')
-
+export default defineConfig(({ mode }) => {
   const { VITE_APP_BASE, VITE_APP_PORT, VITE_APP_PROXY, VITE_APP_PROXY_PREFIX, VITE_BASE_URL } = loadEnv(mode, process.cwd())
 
   const { UNI_PLATFORM } = process.env
 
   const PLATFORM = {
-    isMp: UNI_PLATFORM?.startsWith('mp') ?? false,
     isH5: UNI_PLATFORM === 'h5',
-    isApp: UNI_PLATFORM === 'app',
+    isAPP: UNI_PLATFORM === 'app',
+    isMP: UNI_PLATFORM?.startsWith('mp') ?? false,
+    isQUICKAPP: UNI_PLATFORM?.startsWith('QUICKAPP') ?? false,
+    type: UNI_PLATFORM,
   }
 
   return {
     base: VITE_APP_BASE,
     plugins: [
+      UniManifest(),
       UniLayouts(),
+      UniComponents({
+        resolvers: [WotResolver()],
+        dts: 'src/types/components.d.ts',
+      }),
       UniPages({
         dts: 'src/types/uni-pages.d.ts',
         subPackages: ['src/pages-sub'],
         exclude: ['**/components/**/*.*'],
         routeBlockLang: 'json5',
       }),
-      UniComponents({
-        resolvers: [WotResolver()],
-        dts: 'src/types/components.d.ts',
-      }),
-      UniManifest(),
-      uni(),
-      tailwindcss(),
-      UnifiedViteWeappTailwindcssPlugin(
-        {
-          rem2rpx: true,
-          disabled: PLATFORM.isH5 || PLATFORM.isApp,
-        },
-      ),
+      UniKuRoot(),
+      Uni(),
+      UnoCSS(),
       AutoImport({
         imports: [
           'vue',
@@ -69,6 +65,9 @@ export default defineConfig(async ({ mode }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
+    },
+    define: {
+      __UNI_PLATFORM__: PLATFORM,
     },
     server: {
       host: '0.0.0.0',

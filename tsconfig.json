@@ -10,6 +10,7 @@
       "vite/client",
       "@dcloudio/types",
       "@uni-helper/uni-app-types",
+      "@uni-helper/vite-plugin-uni-pages",
       "@mini-types/alipay",
       "@types/wechat-miniprogram",
       "@douyin-microapp/typings",

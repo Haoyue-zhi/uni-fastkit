@@ -1,23 +1,24 @@
-<route lang="json5" type="home">
-{
-  layout: false,
-  style: {
-    navigationBarTitleText: '首页',
-  },
-}
-</route>
-
 <script setup lang="ts">
-const msg = import.meta.env.VITE_APP_TITLE
+definePage({
+  // 使用 type: "home" 属性设置首页，其他页面不需要设置，默认为page
+  type: 'home',
+  style: {
+    navigationStyle: 'custom',
+  },
+})
+
+const { showNotify } = useNotify()
 </script>
 
 <template>
-  <view class=" m-0 flex min-h-screen min-w-80 place-items-center">
-    <view class=" mx-auto max-w-7xl p-8 text-center">
-      <view>
-        <image class="!size-28" src="/static/logo.png" alt="uni-fastkit logo" />
-      </view>
-      <HelloWorld :msg="msg" />
-    </view>
+  <view class="flex-col-center gap-10 pt-10">
+    <image
+      class="size-36"
+      src="/static/logo.png"
+      mode="aspectFit"
+    />
+    <wd-button @click="showNotify({ type: 'success', message: '欢迎使用UNI-FASTKIT!' })">
+      你好👋
+    </wd-button>
   </view>
 </template>

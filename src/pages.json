@@ -3,41 +3,99 @@
 		{
 			"path": "pages/index/index",
 			"type": "home",
-			"layout": false,
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationStyle": "custom"
 			}
 		},
 		{
-			"path": "pages/about/index",
+			"path": "pages/code/index",
 			"type": "page",
-			"layout": false,
 			"style": {
-				"navigationBarTitleText": "关于"
-			}
+				"navigationBarTitleText": "示例"
+			},
+			"layout": "default"
+		},
+		{
+			"path": "pages/example/alova",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Alova"
+			},
+			"layout": "example"
+		},
+		{
+			"path": "pages/example/hook",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Hook"
+			},
+			"layout": "example"
+		},
+		{
+			"path": "pages/example/layout",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Layout"
+			},
+			"layout": false
+		},
+		{
+			"path": "pages/example/pinia",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Pinia"
+			},
+			"layout": "example"
+		},
+		{
+			"path": "pages/example/router",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Router"
+			},
+			"layout": "example"
+		},
+		{
+			"path": "pages/example/z-paging",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "Z-PAGING"
+			},
+			"layout": "example"
+		},
+		{
+			"path": "pages/common/webview/index",
+			"type": "page"
 		}
 	],
 	"globalStyle": {
+		"navigationBarBackgroundColor": "#f8f8f8",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-fastkit",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#f8f8f8",
+		"backgroundTextStyle": "dark",
+		"backgroundColorTop": "#f8f8f8",
+		"backgroundColorBottom": "#f8f8f8",
+		"enablePullDownRefresh": false,
+		"onReachBottomDistance": 50,
+		"animationType": "pop-in",
+		"animationDuration": 300
 	},
 	"tabBar": {
-		"backgroundColor": "#ffffff",
-		"borderStyle": "white",
-		"color": "#ffffff",
-		"selectedColor": "#ffffff",
+		"backgroundColor": "#f8f8f8",
+		"borderStyle": "black",
+		"color": "#72757e",
+		"selectedColor": "#6b69ef",
 		"list": [
 			{
-				"iconPath": "static/tabbar/home.png",
-				"selectedIconPath": "static/tabbar/home2.png",
+				"iconPath": "static/tabbar/home-outline-rounded.png",
+				"selectedIconPath": "static/tabbar/home-rounded.png",
 				"pagePath": "pages/index/index"
 			},
 			{
-				"iconPath": "static/tabbar/my.png",
-				"selectedIconPath": "static/tabbar/my2.png",
-				"pagePath": "pages/about/index"
+				"iconPath": "static/tabbar/code-blocks-outline.png",
+				"selectedIconPath": "static/tabbar/code-blocks.png",
+				"pagePath": "pages/code/index"
 			}
 		]
 	},
@@ -51,11 +109,20 @@
 			"root": "pages-sub",
 			"pages": [
 				{
-					"path": "demo/index",
+					"path": "demo/icon",
 					"type": "page",
 					"style": {
-						"navigationBarTitleText": "分包页面 标题"
-					}
+						"navigationBarTitleText": "iconify"
+					},
+					"layout": "example"
+				},
+				{
+					"path": "demo/unocss",
+					"type": "page",
+					"style": {
+						"navigationBarTitleText": "UnoCSS"
+					},
+					"layout": "example"
 				}
 			]
 		}

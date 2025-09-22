@@ -18,3 +18,11 @@ interface ImportMetaEnv {
   readonly VITE_BASE_URL: string
   // 更多环境变量...
 }
+
+declare const __UNI_PLATFORM__: {
+  isH5: boolean
+  isAPP: boolean
+  isMP: boolean
+  isQUICKAPP: boolean
+  type: 'app' | 'h5' | 'mp-alipay' | 'mp-baidu' | 'mp-jd' | 'mp-kuaishou' | 'mp-lark' | 'mp-qq' | 'mp-toutiao' | 'mp-weixin' | 'mp-xhs' | 'quickapp-webview' | 'quickapp-webview-huawei' | 'quickapp-webview-union'
+}

@@ -20,6 +20,7 @@ export default defineManifestConfig({
     usingComponents: true,
     nvueStyleCompiler: 'uni-app',
     compilerVersion: 3,
+    darkmode: false,
     // 使用Pinia时不可使用fast启动模式
     nvueLaunchMode: 'normal',
     splashscreen: {
@@ -72,6 +73,7 @@ export default defineManifestConfig({
       es6: true,
       minified: true,
     },
+    darkmode: false,
     optimization: {
       subPackages: true,
     },
@@ -88,6 +90,9 @@ export default defineManifestConfig({
   },
   'uniStatistics': {
     enable: false,
+  },
+  'h5': {
+    darkmode: false,
   },
   'vueVersion': '3',
 })

@@ -1,5 +1,6 @@
 onlyBuiltDependencies:
   - '@tailwindcss/oxide'
+  - '@uni-helper/unocss-preset-uni'
   - core-js
   - esbuild
   - weapp-tailwindcss
