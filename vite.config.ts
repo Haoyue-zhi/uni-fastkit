@@ -8,6 +8,8 @@ import UniLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniManifest from '@uni-helper/vite-plugin-uni-manifest'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
 import UniKuRoot from '@uni-ku/root'
+import { UniEchartsResolver } from 'uni-echarts/resolver'
+import { UniEcharts } from 'uni-echarts/vite'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig, loadEnv } from 'vite'
@@ -32,7 +34,7 @@ export default defineConfig(({ mode }) => {
       UniManifest(),
       UniLayouts(),
       UniComponents({
-        resolvers: [WotResolver()],
+        resolvers: [WotResolver(), UniEchartsResolver()],
         dts: 'src/types/components.d.ts',
       }),
       UniPages({
@@ -42,24 +44,28 @@ export default defineConfig(({ mode }) => {
         routeBlockLang: 'json5',
       }),
       UniKuRoot(),
+      UniEcharts(),
       Uni(),
-      UnoCSS(),
       AutoImport({
         imports: [
           'vue',
           'pinia',
           'uni-app',
           {
-            from: 'uni-mini-router',
-            imports: ['useRouter', 'useRoute'],
+            'uni-mini-router': ['useRouter', 'useRoute'],
           },
           {
             'wot-design-uni': ['useToast', 'useNotify', 'useMessage', 'useQueue'],
           },
+          {
+            'alova/client': ['useRequest', 'useWatcher', 'useFetcher'],
+          },
         ],
+        resolvers: [UniEchartsResolver()],
         dts: 'src/types/auto-import.d.ts',
         dirs: ['src/hooks'], // 自动导入 hooks
       }),
+      UnoCSS(),
     ],
     resolve: {
       alias: {
@@ -84,6 +90,9 @@ export default defineConfig(({ mode }) => {
             },
           }
         : undefined,
+    },
+    optimizeDeps: {
+      exclude: ['wot-design-uni', 'uni-echarts'],
     },
   }
 })

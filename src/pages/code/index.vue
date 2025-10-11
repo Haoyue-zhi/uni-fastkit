@@ -73,6 +73,14 @@ const list: listItemWithUrl[] = [
   //   url: '/pages/example/hook',
   // },
   {
+    icon: 'i-ix-piechart',
+    name: 'Uni ECharts',
+    text: '图表',
+    describe: '适用于uni-app的ECharts组件与Vue ECharts近乎一致的使用体验!',
+    color: '#ff9671',
+    url: '/pages/example/echart',
+  },
+  {
     icon: 'i-ri-route-line',
     name: 'Router',
     text: '路由',

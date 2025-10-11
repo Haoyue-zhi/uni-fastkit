@@ -11,9 +11,9 @@ const { showNotify } = useNotify()
 </script>
 
 <template>
-  <view class="flex-col-center gap-10 pt-10">
+  <view class="flex-col-center gap-20 uni-h-screen">
     <image
-      class="size-36"
+      class="size-50"
       src="/static/logo.png"
       mode="aspectFit"
     />

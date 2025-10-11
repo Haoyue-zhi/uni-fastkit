@@ -15,7 +15,8 @@
       "@types/wechat-miniprogram",
       "@douyin-microapp/typings",
       "z-paging/types",
-      "wot-design-uni/global"
+      "wot-design-uni/global",
+      "uni-echarts/global"
     ],
     "allowJs": true,
     "sourceMap": true

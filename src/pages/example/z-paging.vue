@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { R } from 'node_modules/vite/dist/node/types.d-aGj9QkWt'
 import type { listItem } from '@/pages/code/index.vue'
 
 const props = defineProps<listItem>()
