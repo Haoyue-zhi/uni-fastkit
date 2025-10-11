@@ -135,7 +135,7 @@ const linkList = [
 </script>
 
 <template>
-  <view class="bg-[#e8e9eb]/50 uni-min-h-screen uni-mp:pt-20">
+  <view class="bg-[#e8e9eb]/50 uni-min-h-screen">
     <view class="flex flex-col gap-4 p-4">
       <DescribeCard />
       <view class="flex flex-col overflow-hidden rounded-lg bg-white">

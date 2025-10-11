@@ -123,19 +123,8 @@ const iconifyIcons = [
       </view>
       <view class="space-y-3">
         <view class="rounded bg-gray-100 p-3">
-          <view class="mb-2 text-3 text-gray-700 font-bold">
-            基础用法:
-          </view>
           <view class="text-2.5 text-gray-600 leading-relaxed font-mono">
-            &lt;wd-icon name="star" size="20px" color="#f59e0b" /&gt;
-          </view>
-        </view>
-        <view class="rounded bg-gray-100 p-3">
-          <view class="mb-2 text-3 text-gray-700 font-bold">
-            自定义样式:
-          </view>
-          <view class="text-2.5 text-gray-600 leading-relaxed font-mono">
-            &lt;wd-icon name="home" size="24px" color="var(--wot-color-theme)" /&gt;
+            {{ '<wd-icon name="star" size="20px" color="#f59e0b" />' }}
           </view>
         </view>
       </view>
@@ -181,19 +170,8 @@ const iconifyIcons = [
       </view>
       <view class="space-y-3">
         <view class="rounded bg-gray-100 p-3">
-          <view class="mb-2 text-3 text-gray-700 font-bold">
-            UnoCSS 方式:
-          </view>
           <view class="text-2.5 text-gray-600 leading-relaxed font-mono">
-            &lt;div class="i-carbon-star text-xl text-yellow-500"&gt;&lt;/div&gt;
-          </view>
-        </view>
-        <view class="rounded bg-gray-100 p-3">
-          <view class="mb-2 text-3 text-gray-700 font-bold">
-            自定义大小和颜色:
-          </view>
-          <view class="text-2.5 text-gray-600 leading-relaxed font-mono">
-            &lt;div class="i-carbon-home" style="font-size: 24px; color: #3b82f6;"&gt;&lt;/div&gt;
+            {{ '<view class="i-carbon-star size-24px text-yellow-500" />' }}
           </view>
         </view>
       </view>

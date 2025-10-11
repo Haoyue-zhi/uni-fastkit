@@ -1,3 +1,7 @@
+<script setup lang="ts">
+useNotifyOption()
+</script>
+
 <template>
   <wd-config-provider>
     <KuRootView />

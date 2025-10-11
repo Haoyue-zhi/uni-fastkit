@@ -39,7 +39,7 @@ echarts.use([
   CanvasRenderer,
 ])
 
-const option = ref({
+const option = {
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -81,7 +81,7 @@ const option = ref({
       },
     },
   ],
-})
+}
 </script>
 
 <template>

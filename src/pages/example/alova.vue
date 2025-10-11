@@ -65,70 +65,68 @@ const linkList = [
 
       <!-- 代码示例 -->
       <view class="mt-3 rounded-2 bg-gray-50 p-3">
-        <text class="text-2.5 text-gray-600 leading-relaxed font-mono">
-          <text class="color-[#A626A4]">
-            const
-          </text>
-          <text class="color-[#4078f2]">
-            todoList =
-          </text>
-          <text class="color-[#50a14f]">
-            (
-          </text>
-          page, size
-          <text class="color-[#50a14f]">
-            )
-          </text>
-          <text class="color-[#4078f2]">
-            =>
-          </text> alova
-          <text class="color-[#4078f2]">
-            <text class="color-[#50a14f] -m-1">
+        <view class="text-2.5 text-gray-600 leading-relaxed font-mono">
+          <view>
+            <text class="color-[#A626A4]">
+              const
+            </text><text class="color-[#4078f2]">
+              todoList =
+            </text><text class="color-[#50a14f]">
+              (
+            </text>page, size<text class="color-[#50a14f]">
+              )
+            </text>
+            <text class="color-[#4078f2]">
+              {{ '=>' }}
+            </text> alova
+            <text class="color-[#50a14f]">
               .
             </text>
-            Get
-          </text>
-          <text class="color-[#50a14f]">
-            ('/todos', {
-          </text>
-          params: <text class="color-[#50a14f]">
-            {
-          </text> page<text class="color-[#50a14f]">
-            ,
-          </text> size <text class="color-[#50a14f]">
-            }
-          </text>
-          <text class="color-[#50a14f]">
-            });
-          </text>
-          <br>
-          <text class="color-[#A626A4]">
-            const
-          </text>
-          <text class="color-[#50a14f]">
-            {
-          </text>
-          loading<text class="color-[#50a14f]">
-            ,
-          </text> data<text class="color-[#50a14f]">
-            ,
-          </text> page<text class="color-[#50a14f]">
-            ,
-          </text> pageSize<text class="color-[#50a14f]">
-            ,
-          </text> pageCount<text class="color-[#50a14f]">
-            ,
-          </text> total
-          <text class="color-[#50a14f]">
-            }
-          </text> = <text class="color-[#4078f2]">
-            usePagination
-          </text><text class="color-[#50a14f]">
-            (
-          </text>todoList<text class="color-[#50a14f]">
-            );
-          </text>
-        </text>
+            <text class="color-[#4078f2]">
+              Get
+            </text>
+            <text class="color-[#50a14f]">
+              ('/todos', {
+            </text>params:<text class="color-[#50a14f]">
+              {
+            </text>page<text class="color-[#50a14f]">
+              ,
+            </text> size <text class="color-[#50a14f]">
+              }
+            </text><text class="color-[#50a14f]">
+              });
+            </text>
+          </view>
+
+          <view>
+            <text class="color-[#A626A4]">
+              const
+            </text>
+            <text class="color-[#50a14f]">
+              {
+            </text>
+            loading<text class="color-[#50a14f]">
+              ,
+            </text> data<text class="color-[#50a14f]">
+              ,
+            </text> page<text class="color-[#50a14f]">
+              ,
+            </text> pageSize<text class="color-[#50a14f]">
+              ,
+            </text> pageCount<text class="color-[#50a14f]">
+              ,
+            </text> total
+            <text class="color-[#50a14f]">
+              }
+            </text> = <text class="color-[#4078f2]">
+              usePagination
+            </text><text class="color-[#50a14f]">
+              (
+            </text>todoList<text class="color-[#50a14f]">
+              );
+            </text>
+          </view>
+        </view>
       </view>
     </view>
     <view class="mb-4 rounded-lg bg-white p-4">
@@ -158,13 +156,13 @@ const linkList = [
             (()
           </text>
           <text class="color-[#4078f2]">
-            =>
+            {{ '=>' }}
           </text>
           alova
+          <text class="color-[#50a14f]">
+            .
+          </text>
           <text class="color-[#4078f2]">
-            <text class="color-[#50a14f] -m-1">
-              .
-            </text>
             Get
           </text>
           <text class="color-[#50a14f]">
@@ -200,3 +198,9 @@ const linkList = [
   </demo-block>
   <LinkCellGroup :list="linkList" />
 </template>
+
+<style scoped>
+text {
+  margin: -2px;
+}
+</style>
