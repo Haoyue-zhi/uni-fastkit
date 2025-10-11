@@ -26,6 +26,7 @@
 - 📥 [API 自动加载](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 与UniAPP API 无需引入
 - 🚀 [Wot UI](https://wot-design-uni.cn/) - 70+ 高质量组件，支持暗黑模式、国际化和自定义主题
 - 📖 [z-paging](https://z-paging.zxlee.cn/start/intro.html) - 全平台兼容的多功能分页组件
+- 📊 [Uni ECharts](https://uni-echarts.xiaohe.ink/) - 适用于uni-app的ECharts组件与Vue ECharts近乎一致的使用体验
 
 ## 开发
 
