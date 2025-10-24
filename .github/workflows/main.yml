@@ -20,8 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 缓存 pnpm 依赖（加速后续构建）
-          cache: 'pnpm'
 
       # 安装pnpm
       - name: Install pnpm
