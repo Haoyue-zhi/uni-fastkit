@@ -45,7 +45,7 @@ jobs:
 
       # 运行打包命令（使用 pnpm 执行脚本）
       - name: Build H5
-        run: pnpm run build:h5 --base /uni-fastkit/
+        run: VITE_APP_BASE=/uni-fastkit/ pnpm run build:h5
   
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4.0.0
