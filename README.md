@@ -36,6 +36,8 @@
 
 运行项目 `pnpm dev:{platform}`
 
+更新依赖 `pnpm uvm`
+
 ## 构建
 
 构建项目 `pnpm build:{platform}`
