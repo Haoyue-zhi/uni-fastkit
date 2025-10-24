@@ -25,6 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5.0.0
 
+      # 步骤2：修改代码
+      - name: Modify the code
+        run: |
+          sed -i 's|VITE_APP_BASE= '/'|VITE_APP_BASE= '/uni-faskit/'|g' .env
+          echo "修改后的.env内容:"
+          cat .env | grep VITE_APP_BASE  # 只打印包含VITE_APP_BASE的行
+
       # 安装 pnpm
       - uses: pnpm/action-setup@v4.2.0
         name: Setup pnpm
