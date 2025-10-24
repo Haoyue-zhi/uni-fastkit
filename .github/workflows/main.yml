@@ -23,9 +23,9 @@ jobs:
           # 缓存 pnpm 依赖（加速后续构建）
           cache: 'pnpm'
 
-      # 启用 Corepack（管理 pnpm 版本，Node.js 16.13+ 内置）
-      - name: Enable Corepack
-        run: corepack enable pnpm
+      # 安装pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm@latest-10
 
       # 安装项目依赖（使用 pnpm）
       - name: Install dependencies
