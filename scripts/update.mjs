@@ -14,6 +14,7 @@ const filtList = [
   'vue',
   'sass',
   'unocss',
+  'vite',
 ]
 
 /**

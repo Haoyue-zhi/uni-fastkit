@@ -1,0 +1,45 @@
+name: Build and Deploy H5 to GitHub Pages (pnpm)
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 拉取仓库代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 设置 Node.js 20 版本（pnpm 依赖 Node 环境）
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # 缓存 pnpm 依赖（加速后续构建）
+          cache: 'pnpm'
+
+      # 启用 Corepack（管理 pnpm 版本，Node.js 16.13+ 内置）
+      - name: Enable Corepack
+        run: corepack enable pnpm
+
+      # 安装项目依赖（使用 pnpm）
+      - name: Install dependencies
+        run: pnpm install
+
+      # 运行打包命令（使用 pnpm 执行脚本）
+      - name: Build H5
+        run: pnpm run build:h5
+
+      # 部署到 GitHub Pages（步骤不变）
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 注意：根据实际打包输出目录调整（例如 ./dist 或 ./dist/h5）
+          publish_dir: ./dist/build/h5
+          commit_message: 'Deploy H5 build: ${{ github.sha }}'

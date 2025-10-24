@@ -121,7 +121,7 @@
     "uni-mini-router": "^0.1.6",
     "unocss": "66.0.0",
     "unplugin-auto-import": "^20.2.0",
-    "vite": "^7.1.12",
+    "vite": "5.4.21",
     "vue-tsc": "^3.1.1"
   },
   "lint-staged": {
